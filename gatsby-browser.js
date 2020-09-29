@@ -5,3 +5,9 @@
  */
 
 // You can delete this file if you're not using it
+import React from "react"
+import ProjectsContext from "./src/context/ProjectsContext"
+
+export const wrapRootElement = ({ element }) => (
+  <ProjectsContext>{element}</ProjectsContext>
+)

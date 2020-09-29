@@ -81,26 +81,44 @@ exports.createPages = async ({ graphql, actions }) => {
   }
 
   // Access query results via object destructuring
-  const { allWordpressPage, allWordpressPost, allWordpressWpProject } = result.data
+  const {
+    allWordpressPage,
+    allWordpressPost,
+    allWordpressWpProject,
+  } = result.data
 
   // Create Page pages.
-  const defaultPageTemplate = path.resolve(`./src/templates/defaultPageTemplate.js`)
+  const defaultPageTemplate = path.resolve(
+    `./src/templates/defaultPageTemplate.js`
+  )
   const homepageTemplate = path.resolve(`./src/templates/template-homepage.js`)
   const contactTemplate = path.resolve(`./src/templates/template-contact.js`)
   const aboutPageTemplate = path.resolve(`./src/templates/template-about.js`)
-  const productSingleTemplate = path.resolve(`./src/templates/template-product-single.js`)
-  const productParentTemplate = path.resolve(`./src/templates/template-product-parent.js`)
-  const requestAQuoteTemplate = path.resolve(`./src/templates/template-request-a-quote.js`)
+  const productSingleTemplate = path.resolve(
+    `./src/templates/template-product-single.js`
+  )
+  const productParentTemplate = path.resolve(
+    `./src/templates/template-product-parent.js`
+  )
+  const requestAQuoteTemplate = path.resolve(
+    `./src/templates/template-request-a-quote.js`
+  )
   const pricingTemplate = path.resolve(`./src/templates/template-pricing.js`)
-  const portfolioParentTemplate = path.resolve(`./src/templates/template-portfolio-parent.js`)
-  const blogParentTemplate = path.resolve(`./src/templates/template-blog-parent.js`)
-  const landingPageTemplate = path.resolve(`./src/templates/template-landing-page.js`)
+  const portfolioParentTemplate = path.resolve(
+    `./src/templates/template-portfolio-parent.js`
+  )
+  const blogParentTemplate = path.resolve(
+    `./src/templates/template-blog-parent.js`
+  )
+  const landingPageTemplate = path.resolve(
+    `./src/templates/template-landing-page.js`
+  )
   // We want to create a detailed page for each page node.
   // The path field contains the relative original WordPress link
   // and we use it for the slug to preserve url structure.
   // The Page ID is prefixed with 'PAGE_'
   allWordpressPage.edges.forEach(edge => {
-    switch(edge.node.template) {
+    switch (edge.node.template) {
       case "template-homepage.php":
         createPage({
           // Each page is required to have a `path` as well
@@ -113,7 +131,7 @@ exports.createPages = async ({ graphql, actions }) => {
             id: edge.node.id,
           },
         })
-        break;
+        break
       case "template-contact.php":
         createPage({
           path: edge.node.path,
@@ -122,7 +140,7 @@ exports.createPages = async ({ graphql, actions }) => {
             id: edge.node.id,
           },
         })
-        break;
+        break
       case "template-about.php":
         createPage({
           path: edge.node.path,
@@ -131,7 +149,7 @@ exports.createPages = async ({ graphql, actions }) => {
             id: edge.node.id,
           },
         })
-        break;
+        break
       case "template-product-parent.php":
         createPage({
           path: `${edge.node.path}`,
@@ -141,7 +159,7 @@ exports.createPages = async ({ graphql, actions }) => {
             slug: edge.node.slug,
           },
         })
-        break;
+        break
       case "template-product-single.php":
         createPage({
           path: edge.node.path,
@@ -150,7 +168,7 @@ exports.createPages = async ({ graphql, actions }) => {
             id: edge.node.id,
           },
         })
-        break;
+        break
       case "template-landingpage.php":
         createPage({
           path: edge.node.path,
@@ -159,7 +177,7 @@ exports.createPages = async ({ graphql, actions }) => {
             id: edge.node.id,
           },
         })
-        break;
+        break
       case "template-request-a-quote.php":
         createPage({
           path: edge.node.path,
@@ -168,7 +186,7 @@ exports.createPages = async ({ graphql, actions }) => {
             id: edge.node.id,
           },
         })
-        break;
+        break
       case "template-pricing.php":
         createPage({
           path: edge.node.path,
@@ -177,7 +195,7 @@ exports.createPages = async ({ graphql, actions }) => {
             id: edge.node.id,
           },
         })
-        break;
+        break
       case "template-portfolio-parent.php":
         const projects = allWordpressWpProject.edges
         const projectsPerPage = 18
@@ -185,20 +203,20 @@ exports.createPages = async ({ graphql, actions }) => {
 
         Array.from({ length: numberOfProjects }).forEach((project, index) => {
           createPage({
-            path: index === 0 ? edge.node.path : `${edge.node.path}${index + 1}`,
+            path:
+              index === 0 ? edge.node.path : `${edge.node.path}${index + 1}`,
             component: slash(portfolioParentTemplate),
             context: {
               id: edge.node.id,
               actualPath: edge.node.path,
-              projects: projects,
               numberOfProjects,
               currentPage: index + 1,
               skip: index * projectsPerPage,
-              limit: projectsPerPage
+              limit: projectsPerPage,
             },
           })
         })
-        break;
+        break
       case "template-blog-parent.php":
         const posts = allWordpressPost.edges
         const postsPerPage = 18
@@ -206,7 +224,8 @@ exports.createPages = async ({ graphql, actions }) => {
 
         Array.from({ length: numberOfPages }).forEach((page, index) => {
           createPage({
-            path: index === 0 ? edge.node.path : `${edge.node.path}${index + 1}`,
+            path:
+              index === 0 ? edge.node.path : `${edge.node.path}${index + 1}`,
             component: slash(blogParentTemplate),
             context: {
               id: edge.node.id,
@@ -215,11 +234,11 @@ exports.createPages = async ({ graphql, actions }) => {
               numberOfPages,
               currentPage: index + 1,
               skip: index * postsPerPage,
-              limit: postsPerPage
+              limit: postsPerPage,
             },
           })
         })
-        break;
+        break
       default:
         createPage({
           path: edge.node.path,
