@@ -1,29 +1,29 @@
 $primary-color: #a2764f;
 $header-height: 130px;
 
-@import 'vendors/slick.min.css';
-@import 'vendors/flexboxgrid';
-@import 'vendors/wpblock';
+@import "vendors/slick.min.css";
+@import "vendors/flexboxgrid";
+@import "vendors/wpblock";
 
 @font-face {
-  font-family: 'AktivGrotesk';
-  src: url('../../../static/fonts/AktivGrotesk-Bold.woff') format('woff');
+  font-family: "AktivGrotesk";
+  src: url("../../../static/fonts/AktivGrotesk-Bold.woff") format("woff");
   font-weight: bold;
   font-style: normal;
   font-display: swap;
 }
 
 @font-face {
-  font-family: 'Maison Neue';
-  src: url('../../../static/fonts/MaisonNeue-Medium.woff') format('woff');
+  font-family: "Maison Neue";
+  src: url("../../../static/fonts/MaisonNeue-Medium.woff") format("woff");
   font-weight: 500;
   font-style: normal;
   font-display: swap;
 }
 
 @font-face {
-  font-family: 'Maison Neue';
-  src: url('../../../static/fonts/MaisonNeue-Bold.woff') format('woff');
+  font-family: "Maison Neue";
+  src: url("../../../static/fonts/MaisonNeue-Bold.woff") format("woff");
   font-weight: bold;
   font-style: normal;
   font-display: swap;
@@ -107,8 +107,7 @@ img {
 
 p {
   margin-bottom: 25px;
-  ;
-  @include breakpoint('xxlarge') {
+  @include breakpoint("xxlarge") {
     margin-bottom: 30px;
   }
 }
@@ -136,11 +135,11 @@ select {
 body {
   background: #efefef;
   color: #434343;
-  font: 500 16px/1.44 'Maison Neue', Arial, Helvetica, sans-serif;
+  font: 500 16px/1.44 "Maison Neue", Arial, Helvetica, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 
-  @include breakpoint('small') {
+  @include breakpoint("small") {
     font-size: 18px;
     line-height: 1.5;
   }
@@ -174,10 +173,7 @@ body {
     }
   }
 
-
-
   .slick-arrow {
-
     &:hover {
       border-color: $primary-color;
       color: $primary-color;
@@ -195,8 +191,13 @@ body {
   position: relative;
 }
 
-h1,h2,h3,h4,h5,h6 {
-  font-family: 'AktivGrotesk';
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: "AktivGrotesk";
   font-size: 700;
   color: #312f30;
   margin: 0 0 30px;
@@ -210,12 +211,12 @@ h2,
   text-transform: uppercase;
   letter-spacing: 1px;
 
-  @include breakpoint('small') {
+  @include breakpoint("small") {
     font-size: 36px;
     letter-spacing: 3px;
   }
 
-  @include breakpoint('xxlarge') {
+  @include breakpoint("xxlarge") {
     font-size: 40px;
     letter-spacing: 4px;
   }
@@ -261,7 +262,7 @@ select {
   appearance: none;
   transition: border 0.3s;
 
-  @include breakpoint('medium') {
+  @include breakpoint("medium") {
     height: 54px;
     font-size: 16px;
   }
@@ -290,7 +291,7 @@ label,
   text-transform: uppercase;
   margin-bottom: 3px;
 
-  @include breakpoint('medium') {
+  @include breakpoint("medium") {
     margin-bottom: 11px;
   }
 
@@ -328,7 +329,7 @@ label,
     }
   }
 
-  >div {
+  > div {
     height: 100%;
     width: 100%;
   }
@@ -348,9 +349,9 @@ label,
 
 .has-overlay {
   position: relative;
-  
+
   &::before {
-    content: '';
+    content: "";
     position: absolute;
     left: 0;
     right: 0;
@@ -383,7 +384,7 @@ label,
   display: inline-block;
   vertical-align: middle;
   background: #312f30;
-  color: $primary-color; 
+  color: $primary-color;
   text-decoration: none;
   border: 1px solid #312f30;
   border-radius: 0;
@@ -396,11 +397,11 @@ label,
   cursor: pointer;
   transition: all 0.3s;
 
-  @include breakpoint('small') {
+  @include breakpoint("small") {
     padding: 10px 25px;
   }
 
-  @include breakpoint('xxlarge') {
+  @include breakpoint("xxlarge") {
     font-size: 16px;
     padding: 13px 30px;
   }
@@ -456,12 +457,12 @@ label,
   z-index: 99;
   box-shadow: 0 0 12px rgba(#000, 0.4);
 
-  @include breakpoint('medium') {
+  @include breakpoint("medium") {
     height: 109px;
     position: fixed;
   }
 
-  @include breakpoint('xxlarge') {
+  @include breakpoint("xxlarge") {
     height: $header-height;
   }
 }
@@ -469,7 +470,7 @@ label,
 .header__top {
   height: 0;
 
-  @include breakpoint('medium') {
+  @include breakpoint("medium") {
     height: auto;
     background: #312f30;
     display: block;
@@ -490,7 +491,7 @@ ul.headertop__nav {
   visibility: hidden;
   transition: opacity 0.4s, visibility 0.4s;
 
-  @include breakpoint('medium') {
+  @include breakpoint("medium") {
     text-align: right;
     position: static;
     font-size: 13px;
@@ -500,7 +501,7 @@ ul.headertop__nav {
     opacity: 1;
   }
 
-  @include breakpoint('xxlarge') {
+  @include breakpoint("xxlarge") {
     font-size: 14px;
   }
 
@@ -512,18 +513,18 @@ ul.headertop__nav {
     letter-spacing: 0.1em;
     padding: 0 16px;
 
-    @include breakpoint('small') {
+    @include breakpoint("small") {
       padding: 0 0 0 15px;
       margin-left: 15px;
     }
 
-    @include breakpoint('xxlarge') {
+    @include breakpoint("xxlarge") {
       padding: 0 0 0 25px;
       margin-left: 20px;
     }
 
     &:before {
-      content: '';
+      content: "";
       position: absolute;
       left: 0;
       height: 12px;
@@ -532,7 +533,7 @@ ul.headertop__nav {
       background: #3c3c3c;
       transform: translateY(-50%);
 
-      @include breakpoint('small') {
+      @include breakpoint("small") {
         background: #3c3b3b;
         height: 12px;
       }
@@ -551,18 +552,18 @@ ul.headertop__nav {
     display: block;
     padding: 7px 0;
 
-    @include breakpoint('small') {
+    @include breakpoint("small") {
       color: #bebebe;
     }
 
-    @include breakpoint('xxlarge') {
+    @include breakpoint("xxlarge") {
       padding: 10px 0;
     }
 
     &:hover {
       color: $primary-color;
 
-      @include breakpoint('small') {
+      @include breakpoint("small") {
         color: #fff;
       }
     }
@@ -574,11 +575,11 @@ ul.headertop__nav {
   position: relative;
   padding: 15px 0;
 
-  @include breakpoint('small') {
+  @include breakpoint("small") {
     padding: 20px 0;
   }
 
-  @include breakpoint('medium') {
+  @include breakpoint("medium") {
     padding: 0;
   }
 
@@ -586,7 +587,7 @@ ul.headertop__nav {
     background: #efefef;
 
     &:before {
-      content: '';
+      content: "";
       position: absolute;
       left: 0;
       right: 0;
@@ -598,7 +599,7 @@ ul.headertop__nav {
 }
 
 .header__bottomwrap {
-  @include breakpoint('small') {
+  @include breakpoint("small") {
     display: flex;
     flex-wrap: wrap;
     align-items: center;
@@ -611,17 +612,17 @@ ul.headertop__nav {
   float: left;
   margin-left: -10px;
 
-  @include breakpoint('small') {
+  @include breakpoint("small") {
     width: 170px;
     float: left;
     margin-left: 0;
   }
 
-  @include breakpoint('large') {
+  @include breakpoint("large") {
     float: none;
   }
 
-  @include breakpoint('xxlarge') {
+  @include breakpoint("xxlarge") {
     width: 240px;
     margin: 4px 0 0;
   }
@@ -635,7 +636,7 @@ ul.headertop__nav {
 .header__nav {
   padding: 0 30px;
 
-  @include breakpoint('medium') {
+  @include breakpoint("medium") {
     padding: 0;
   }
 }
@@ -644,11 +645,11 @@ ul.headertop__nav {
   float: right;
   margin-right: 25px;
 
-  @include breakpoint('medium') {
+  @include breakpoint("medium") {
     display: none;
   }
 
-  @include breakpoint('large') {
+  @include breakpoint("large") {
     float: none;
     margin-right: 0;
   }
@@ -668,7 +669,7 @@ ul.headertop__nav {
   overflow: hidden;
   transition: height 0.3s;
 
-  @include breakpoint('medium') {
+  @include breakpoint("medium") {
     position: static;
     overflow: initial;
     height: auto;
@@ -680,12 +681,12 @@ ul.main__nav {
   font-size: 16px;
   padding: 90px 0 160px;
 
-  @include breakpoint('medium') {
+  @include breakpoint("medium") {
     padding: 0;
     display: block;
   }
 
-  >li {
+  > li {
     display: block;
     position: relative;
     font-size: 22px;
@@ -693,7 +694,7 @@ ul.main__nav {
     letter-spacing: 0.06em;
     padding: 0 0 10px;
 
-    @include breakpoint('medium') {
+    @include breakpoint("medium") {
       display: inline-block;
       text-transform: uppercase;
       margin: 0 25px;
@@ -702,7 +703,7 @@ ul.main__nav {
       font-weight: normal;
     }
 
-    @include breakpoint('xxlarge') {
+    @include breakpoint("xxlarge") {
       margin: 0 34px;
       font-size: 16px;
     }
@@ -710,7 +711,6 @@ ul.main__nav {
     &:last-child {
       margin-right: 0;
     }
-
 
     &.active {
       .dropdown {
@@ -734,7 +734,7 @@ ul.main__nav {
       color: $primary-color;
       transition: transform 0.3s, color 0.3s;
 
-      @include breakpoint('medium') {
+      @include breakpoint("medium") {
         width: 10px;
         height: 10px;
         color: #121212;
@@ -750,19 +750,19 @@ ul.main__nav {
     }
   }
 
-  >li>a,
+  > li > a,
   .menu__linkwrap a {
     color: #fff;
     display: block;
     padding: 10px 25px;
     outline: none !important;
 
-    @include breakpoint('medium') {
+    @include breakpoint("medium") {
       padding: 28px 0;
       color: #121212;
     }
 
-    @include breakpoint('xxlarge') {
+    @include breakpoint("xxlarge") {
       padding: 34px 0;
     }
 
@@ -780,7 +780,7 @@ ul.main__nav {
     font-size: 16px;
     font-weight: normal;
 
-    @include breakpoint('medium') {
+    @include breakpoint("medium") {
       max-height: none;
       font-size: 95%;
       position: absolute;
@@ -789,7 +789,7 @@ ul.main__nav {
       width: 220px;
       left: -20px;
       top: 110%;
-      box-shadow: 2px 5px 3px rgba(97,97,97,0.4);
+      box-shadow: 2px 5px 3px rgba(97, 97, 97, 0.4);
       border-top: 1px solid #121212;
       color: #312f30;
     }
@@ -797,20 +797,20 @@ ul.main__nav {
     .row {
       padding: 10px 0 0;
 
-      @include breakpoint('medium') {
+      @include breakpoint("medium") {
         padding: 0;
       }
     }
 
     [class^="col-"],
     [class*=" col-"] {
-      @include breakpoint('medium') {
+      @include breakpoint("medium") {
         position: relative;
       }
 
       &:before {
-        @include breakpoint('medium') {
-          content: '';
+        @include breakpoint("medium") {
+          content: "";
           position: absolute;
           left: 0;
           top: 32%;
@@ -828,7 +828,7 @@ ul.main__nav {
     ul {
       padding: 5px 0 0 25px;
 
-      @include breakpoint('medium') {
+      @include breakpoint("medium") {
         padding: 0;
       }
     }
@@ -845,8 +845,8 @@ ul.main__nav {
       transition: background 0.3s, color 0.3s;
       outline: none !important;
 
-      @include breakpoint('medium') {
-        color: #312f30; 
+      @include breakpoint("medium") {
+        color: #312f30;
       }
 
       &:hover {
@@ -861,14 +861,14 @@ ul.main__nav {
       text-transform: none;
       transition: color 0.3s;
 
-      @include breakpoint('medium') {
+      @include breakpoint("medium") {
         font-weight: 700;
         font-size: 24px;
         font-weight: 700;
         color: #312f30;
       }
 
-      @include breakpoint('xxlarge') {
+      @include breakpoint("xxlarge") {
         font-size: 30px;
       }
     }
@@ -896,7 +896,7 @@ ul.main__nav {
     justify-content: center;
     outline: none !important;
 
-    @include breakpoint('medium') {
+    @include breakpoint("medium") {
       right: -16px;
       width: auto;
       top: 50%;
@@ -908,7 +908,7 @@ ul.main__nav {
   .megamenu {
     position: static;
 
-    @include breakpoint('medium') {
+    @include breakpoint("medium") {
       position: static;
     }
 
@@ -923,29 +923,29 @@ ul.main__nav {
     font-size: 16px;
     position: relative;
 
-    @include breakpoint('medium') {
+    @include breakpoint("medium") {
       max-width: 370px;
       margin: 0 auto;
       padding: 15px 0 15px;
       text-transform: none;
     }
 
-    @include breakpoint('big') {
+    @include breakpoint("big") {
       padding: 35px 0 30px;
     }
 
-    @include breakpoint('xxlarge') {
+    @include breakpoint("xxlarge") {
       font-size: 18px;
       padding: 72px 0 105px;
     }
-  
+
     a {
       padding: 0;
       color: #fff;
       display: block;
       padding: 12px 20px;
 
-      @include breakpoint('medium') {
+      @include breakpoint("medium") {
         color: #434343;
       }
 
@@ -971,13 +971,13 @@ ul.main__nav {
       margin-bottom: 5px;
       display: none;
 
-      @include breakpoint('medium') {
+      @include breakpoint("medium") {
         display: block;
         margin-bottom: 20px;
         font-size: 15px;
       }
 
-      @include breakpoint('xxlarge') {
+      @include breakpoint("xxlarge") {
         margin-bottom: 30px;
       }
     }
@@ -985,7 +985,7 @@ ul.main__nav {
     .imagebox {
       display: none;
 
-      @include breakpoint('medium') {
+      @include breakpoint("medium") {
         display: block;
         margin: 5px 0 15px;
       }
@@ -995,7 +995,7 @@ ul.main__nav {
       display: none;
       transition: color 0.3s;
 
-      @include breakpoint('medium') {
+      @include breakpoint("medium") {
         display: block;
       }
 
@@ -1013,11 +1013,11 @@ ul.main__nav {
         font-weight: 700;
         border-bottom: 2px solid #312f30;
 
-        @include breakpoint('big') {
+        @include breakpoint("big") {
           font-size: 16px;
         }
 
-        @include breakpoint('xxlarge') {
+        @include breakpoint("xxlarge") {
           font-size: 20px;
         }
       }
@@ -1032,7 +1032,7 @@ ul.main__nav {
     position: relative;
 
     &:before {
-      content: '';
+      content: "";
       position: absolute;
       left: 0;
       right: 0;
@@ -1056,7 +1056,7 @@ ul.main__nav {
   clear: both;
   display: block;
 
-  @include breakpoint('small') {
+  @include breakpoint("small") {
     max-width: 60%;
   }
 }
@@ -1078,7 +1078,7 @@ ul.main__nav {
     overflow-y: auto;
     overflow-x: hidden;
 
-    @include breakpoint('medium') {
+    @include breakpoint("medium") {
       height: auto;
       overflow: initial;
     }
@@ -1141,7 +1141,11 @@ ul.main__nav {
   visibility: hidden;
   transition: opacity 0.4s, visibility 0.4s;
 
-  @include breakpoint('medium') {
+  .button {
+    color: #fff;
+  }
+
+  @include breakpoint("medium") {
     position: static;
     left: 0;
     transform: none;
@@ -1155,7 +1159,7 @@ ul.main__nav {
     display: none;
   }
 
-  @include breakpoint('big') {
+  @include breakpoint("big") {
     display: inline-block;
   }
 
@@ -1172,7 +1176,7 @@ ul.main__nav {
 .header__phone {
   margin-top: -2px;
 
-  @include breakpoint('medium') {
+  @include breakpoint("medium") {
     letter-spacing: 0.06em;
     font-weight: 700;
   }
@@ -1182,12 +1186,12 @@ ul.main__nav {
     font-weight: 700;
     color: #121212;
 
-    @include breakpoint('small') {
+    @include breakpoint("small") {
       font-size: 16px;
       font-weight: normal;
     }
 
-    @include breakpoint('xxlarge') {
+    @include breakpoint("xxlarge") {
       font-size: 18px;
     }
 
@@ -1206,12 +1210,12 @@ ul.main__nav {
   position: relative;
   color: #fff;
 
-  @include breakpoint('medium') {
+  @include breakpoint("medium") {
     margin: 0 0 54px;
   }
 
   .mobile__button {
-    @include breakpoint('big') {
+    @include breakpoint("big") {
       display: none;
     }
   }
@@ -1221,15 +1225,15 @@ ul.main__nav {
     height: 550px;
     overflow: hidden;
 
-    @include breakpoint('small') {
+    @include breakpoint("small") {
       height: 620px;
     }
 
-    @include breakpoint('medium') {
+    @include breakpoint("medium") {
       height: 670px;
     }
 
-    @include breakpoint('xxlarge') {
+    @include breakpoint("xxlarge") {
       min-height: 839px;
       height: 75vh;
     }
@@ -1244,27 +1248,27 @@ ul.main__nav {
     letter-spacing: -1px;
     padding-bottom: 20px;
 
-    @include breakpoint('small') {
+    @include breakpoint("small") {
       font-size: 60px;
     }
 
-    @include breakpoint('large') {
+    @include breakpoint("large") {
       font-size: 70px;
     }
 
-    @include breakpoint('big') {
+    @include breakpoint("big") {
       font-size: 72px;
       letter-spacing: -2px;
       padding-bottom: 42px;
       max-width: 65%;
     }
 
-    @include breakpoint('xxlarge') {
+    @include breakpoint("xxlarge") {
       font-size: 90px;
     }
 
     &:before {
-      content: '';
+      content: "";
       position: absolute;
       bottom: 0;
       left: -9999px;
@@ -1282,7 +1286,7 @@ ul.main__nav {
   left: 25px;
   bottom: 34px;
 
-  @include breakpoint('medium') {
+  @include breakpoint("medium") {
     left: auto;
     right: -224px;
     bottom: 22px;
@@ -1291,7 +1295,7 @@ ul.main__nav {
   .bar {
     margin: 0 10px;
 
-    @include breakpoint('small') {
+    @include breakpoint("small") {
       margin: 0 14px;
     }
   }
@@ -1318,7 +1322,7 @@ ul.main__nav {
     right: 25px;
     bottom: 35px;
 
-    @include breakpoint('medium') {
+    @include breakpoint("medium") {
       right: 69px;
       bottom: 97px;
     }
@@ -1326,7 +1330,7 @@ ul.main__nav {
     &.slick-prev {
       right: 79px;
 
-      @include breakpoint('medium') {
+      @include breakpoint("medium") {
         right: 124px;
       }
     }
@@ -1336,12 +1340,12 @@ ul.main__nav {
 .banner__text {
   width: 100%;
 
-  @include breakpoint('medium') {
+  @include breakpoint("medium") {
     padding: 0 180px 0 0;
     margin-bottom: -18px;
   }
 
-  @include breakpoint('xxlarge') {
+  @include breakpoint("xxlarge") {
     padding: 0 240px 0 0;
   }
 }
@@ -1349,7 +1353,7 @@ ul.main__nav {
 .bottomtext__top {
   width: 100%;
 
-  @include breakpoint('medium') {
+  @include breakpoint("medium") {
     position: relative;
   }
 }
@@ -1359,38 +1363,37 @@ ul.main__nav {
   line-height: 1.4;
   padding: 15px 0 35px;
 
-  @include breakpoint('big') {
+  @include breakpoint("big") {
     float: right;
     padding: 28px 0 0;
     max-width: 22%;
     font-weight: 700;
   }
 
-  @include breakpoint('xxlarge') {
+  @include breakpoint("xxlarge") {
     font-size: 25px;
     max-width: 25%;
   }
-  
 }
 
 .generaltext {
   padding: 40px 0 20px;
   position: relative;
 
-  @include breakpoint('medium') {
+  @include breakpoint("medium") {
     padding: 50px 0 40px;
   }
 
-  @include breakpoint('large') {
+  @include breakpoint("large") {
     padding: 60px 0 40px;
   }
 
-  @include breakpoint('xxlarge') {
+  @include breakpoint("xxlarge") {
     padding: 100px 0 50px;
   }
 
   &.range {
-    @include breakpoint('large') {
+    @include breakpoint("large") {
       padding: 63px 0 75px;
     }
 
@@ -1400,7 +1403,7 @@ ul.main__nav {
     }
 
     h3 {
-      @include breakpoint('medium') {
+      @include breakpoint("medium") {
         margin: 0;
       }
     }
@@ -1409,8 +1412,8 @@ ul.main__nav {
       position: relative;
 
       &:before {
-        @include breakpoint('medium') {
-          content: '';
+        @include breakpoint("medium") {
+          content: "";
           position: absolute;
           left: -55px;
           top: 0;
@@ -1419,11 +1422,11 @@ ul.main__nav {
           background: $primary-color;
         }
 
-        @include breakpoint('xxlarge') {
+        @include breakpoint("xxlarge") {
           // left
         }
 
-        @include breakpoint('xxlarge') {
+        @include breakpoint("xxlarge") {
           left: -167px;
         }
       }
@@ -1431,12 +1434,12 @@ ul.main__nav {
   }
 
   &.pricing {
-    @include breakpoint('large') {
+    @include breakpoint("large") {
       padding-bottom: 108px;
     }
 
     .image__wrap {
-      @include breakpoint('large') {
+      @include breakpoint("large") {
         max-width: 768px;
         margin-top: 24px;
       }
@@ -1444,20 +1447,20 @@ ul.main__nav {
   }
 
   &.decking {
-    @include breakpoint('large') {
+    @include breakpoint("large") {
       padding-bottom: 97px;
     }
 
     .image__wrap {
-      @include breakpoint('large') {
+      @include breakpoint("large") {
         padding-left: 37px;
         position: relative;
         z-index: 9;
       }
     }
-    
+
     .textBox {
-      @include breakpoint('large') {
+      @include breakpoint("large") {
         padding: 0 0 28px;
       }
     }
@@ -1468,13 +1471,13 @@ ul.main__nav {
       margin-bottom: 30px;
       text-transform: uppercase;
 
-      @include breakpoint('large') {
+      @include breakpoint("large") {
         padding-bottom: 42px;
         margin-bottom: 54px;
       }
 
       &:before {
-        content: '';
+        content: "";
         position: absolute;
         right: -130px;
         bottom: 0;
@@ -1486,15 +1489,15 @@ ul.main__nav {
   }
 
   &.walls {
-    @include breakpoint('large') {
+    @include breakpoint("large") {
       padding-bottom: 53px;
     }
-    
+
     .image__wrap {
       position: relative;
       z-index: 4;
 
-      @include breakpoint('large') {
+      @include breakpoint("large") {
         padding-right: 21px;
       }
     }
@@ -1502,7 +1505,7 @@ ul.main__nav {
     .textBox {
       padding-left: 0;
 
-      @include breakpoint('large') {
+      @include breakpoint("large") {
         max-width: 529px;
         float: right;
       }
@@ -1514,13 +1517,13 @@ ul.main__nav {
       margin-bottom: 30px;
       text-transform: uppercase;
 
-      @include breakpoint('large') {
+      @include breakpoint("large") {
         padding-bottom: 42px;
         margin-bottom: 54px;
       }
 
       &:before {
-        content: '';
+        content: "";
         position: absolute;
         right: -9999px;
         bottom: 0;
@@ -1531,7 +1534,7 @@ ul.main__nav {
     }
 
     &.add {
-      @include breakpoint('medium') {
+      @include breakpoint("medium") {
         padding-top: 100px;
         padding-bottom: 100px;
       }
@@ -1541,7 +1544,7 @@ ul.main__nav {
   &.ceilings {
     padding-bottom: 50px;
 
-    @include breakpoint('large') {
+    @include breakpoint("large") {
       padding-bottom: 200px;
     }
 
@@ -1552,8 +1555,8 @@ ul.main__nav {
     .image__wrap {
       position: relative;
       z-index: 4;
-      
-      @include breakpoint('large') {
+
+      @include breakpoint("large") {
         max-width: 607px;
         padding-left: 48px;
       }
@@ -1562,12 +1565,12 @@ ul.main__nav {
     .textBox {
       padding: 0;
 
-      @include breakpoint('big') {
+      @include breakpoint("big") {
         max-width: 403px;
         margin-left: 65px;
       }
 
-      @include breakpoint('xxlarge') {
+      @include breakpoint("xxlarge") {
         max-width: 483px;
         margin-left: 155px;
       }
@@ -1579,13 +1582,13 @@ ul.main__nav {
       margin-bottom: 30px;
       text-transform: uppercase;
 
-      @include breakpoint('medium') {
+      @include breakpoint("medium") {
         padding-bottom: 42px;
         margin-bottom: 54px;
       }
 
       &:before {
-        content: '';
+        content: "";
         position: absolute;
         right: -500px;
         bottom: 0;
@@ -1597,7 +1600,7 @@ ul.main__nav {
   }
 
   .textBox {
-    @include breakpoint('big') {
+    @include breakpoint("big") {
       padding-left: 51px;
     }
   }
@@ -1629,23 +1632,23 @@ ul.main__nav {
   .btnWrap {
     padding: 0 0 30px;
 
-    @include breakpoint('medium') {
+    @include breakpoint("medium") {
       padding: 15px 0 0;
     }
 
-    @include breakpoint('xxlarge') {
+    @include breakpoint("xxlarge") {
       padding: 23px 0 0;
     }
   }
 
   .image__wrap {
-    @include breakpoint('small') {
+    @include breakpoint("small") {
       max-width: 650px;
       margin-left: auto;
       margin-right: auto;
     }
 
-    @include breakpoint('medium') {
+    @include breakpoint("medium") {
       max-width: none;
     }
   }
@@ -1654,11 +1657,11 @@ ul.main__nav {
 #main {
   padding-top: 0;
 
-  @include breakpoint('medium') {
+  @include breakpoint("medium") {
     padding-top: 109px;
   }
 
-  @include breakpoint('xxlarge') {
+  @include breakpoint("xxlarge") {
     padding-top: $header-height;
   }
 }
@@ -1680,7 +1683,7 @@ ul.main__nav {
   cursor: pointer;
   transition: all 0.3s;
 
-  @include breakpoint('xxlarge') {
+  @include breakpoint("xxlarge") {
     padding: 18px 73px 18px 20px;
     font-weight: 700;
     min-width: 300px;
@@ -1704,7 +1707,7 @@ ul.main__nav {
     justify-content: center;
     transition: color 0.3s;
 
-    @include breakpoint('xxlarge') {
+    @include breakpoint("xxlarge") {
       width: 55px;
     }
   }
@@ -1713,7 +1716,7 @@ ul.main__nav {
     width: 12px;
     height: 12px;
 
-    @include breakpoint('xxlarge') {
+    @include breakpoint("xxlarge") {
       width: 15px;
       height: 15px;
     }
@@ -1743,11 +1746,11 @@ ul.main__nav {
   width: 200px;
   margin: 0 auto 50px;
 
-  @include breakpoint('small') {
+  @include breakpoint("small") {
     margin: 0 0 50px;
   }
 
-  @include breakpoint('medium') {
+  @include breakpoint("medium") {
     width: 259px;
     margin: 0 0 105px;
   }
@@ -1764,26 +1767,24 @@ ul.main__nav {
   font-size: 16px;
   padding: 40px 0 0;
 
-  @include breakpoint('medium') {
+  @include breakpoint("medium") {
     padding: 60px 0 0;
   }
 
-  @include breakpoint('large') {
+  @include breakpoint("large") {
     padding: 80px 0 0;
   }
 
-  @include breakpoint('xxlarge') {
+  @include breakpoint("xxlarge") {
     padding: 140px 0 60px;
   }
-  
+
   .container {
     max-width: 1550px;
 
-    @include breakpoint('xxlarge') {
+    @include breakpoint("xxlarge") {
       max-width: 1688px;
     }
-
-    
   }
 
   h4 {
@@ -1792,7 +1793,7 @@ ul.main__nav {
     text-align: center;
     margin-bottom: 20px;
 
-    @include breakpoint('small') {
+    @include breakpoint("small") {
       text-align: left;
       margin-bottom: 30px;
     }
@@ -1808,7 +1809,7 @@ ul.main__nav {
 }
 
 .splitMenu {
-  @include breakpoint('small') {
+  @include breakpoint("small") {
     column-count: 2;
   }
 }
@@ -1817,7 +1818,7 @@ ul.footer_menu {
   text-align: center;
   padding-bottom: 50px;
 
-  @include breakpoint('small') {
+  @include breakpoint("small") {
     text-align: left;
   }
 
@@ -1832,11 +1833,11 @@ ul.footer_menu {
     margin-bottom: 10px;
     text-align: center;
 
-    @include breakpoint('small') {
+    @include breakpoint("small") {
       text-align: left;
     }
   }
-  
+
   address {
     font-style: normal;
   }
@@ -1854,11 +1855,11 @@ ul.footer_menu {
 .footer__top {
   padding-bottom: 10px;
 
-  @include breakpoint('large') {
+  @include breakpoint("large") {
     padding-bottom: 40px;
   }
 
-  @include breakpoint('xxlarge') {
+  @include breakpoint("xxlarge") {
     padding-bottom: 80px;
   }
 }
@@ -1867,7 +1868,7 @@ ul.footer_menu {
   text-align: center;
   padding-bottom: 50px;
 
-  @include breakpoint('small') {
+  @include breakpoint("small") {
     text-align: left;
   }
 
@@ -1878,7 +1879,7 @@ ul.footer_menu {
 }
 
 .social-networks {
-  li  {
+  li {
     display: inline-block;
     vertical-align: middle;
     margin-right: 18px;
@@ -1898,13 +1899,13 @@ ul.footer_menu {
   color: #7f7f7f;
   border-top: 2px solid $primary-color;
   padding: 30px 0;
-  
-  @include breakpoint('small') {
+
+  @include breakpoint("small") {
     padding-top: 45px;
     border-width: 1px;
   }
 
-  @include breakpoint('large') {
+  @include breakpoint("large") {
     padding: 50px 0;
   }
 
@@ -1925,7 +1926,7 @@ ul.footer_menu {
   text-align: center;
   margin-bottom: 30px;
 
-  @include breakpoint('medium') {
+  @include breakpoint("medium") {
     text-align: left;
     margin-bottom: 0;
   }
@@ -1940,10 +1941,9 @@ ul.footer_menu {
   font-weight: normal;
   text-align: center;
 
-  @include breakpoint('medium') {
+  @include breakpoint("medium") {
     text-align: right;
   }
-
 
   .icon {
     width: 15px;
@@ -1961,15 +1961,15 @@ ul.footer_menu {
   margin: 0 auto 30px;
   position: relative;
 
-  @include breakpoint('medium') {
+  @include breakpoint("medium") {
     max-width: 400px;
   }
 
-  @include breakpoint('big') {
+  @include breakpoint("big") {
     max-width: 440px;
   }
 
-  @include breakpoint('xxlarge') {
+  @include breakpoint("xxlarge") {
     max-width: 498px;
   }
 
@@ -1978,7 +1978,7 @@ ul.footer_menu {
     overflow: hidden;
     margin-bottom: 20px;
 
-    @include breakpoint('small') {
+    @include breakpoint("small") {
       margin-bottom: 56px;
       height: 357px;
     }
@@ -1993,7 +1993,7 @@ ul.footer_menu {
     text-transform: uppercase;
     letter-spacing: 1px;
 
-    @include breakpoint('large') {
+    @include breakpoint("large") {
       margin: 0;
       position: absolute;
       left: -20px;
@@ -2002,7 +2002,7 @@ ul.footer_menu {
       transform-origin: 0 50%;
     }
 
-    @include breakpoint('big') {
+    @include breakpoint("big") {
       left: -49px;
     }
   }
@@ -2012,7 +2012,7 @@ ul.footer_menu {
     margin-bottom: 20px;
     text-transform: capitalize;
 
-    @include breakpoint('small') {
+    @include breakpoint("small") {
       font-size: 30px;
     }
 
@@ -2038,20 +2038,19 @@ ul.footer_menu {
     &:hover {
       color: $primary-color;
     }
-
   }
 }
 
 .news__slider {
-  @include breakpoint('small') {
+  @include breakpoint("small") {
     padding: 78px 70px 0 70px;
   }
 
-  @include breakpoint('medium') {
+  @include breakpoint("medium") {
     padding: 50px 0 0;
   }
 
-  @include breakpoint('xxlarge') {
+  @include breakpoint("xxlarge") {
     padding: 78px 70px 0 70px;
   }
 }
@@ -2060,15 +2059,15 @@ ul.footer_menu {
   position: relative;
   padding: 30px 0;
 
-  @include breakpoint('medium') {
+  @include breakpoint("medium") {
     padding: 60px 0;
   }
 
-  @include breakpoint('large') {
+  @include breakpoint("large") {
     padding: 42px 0 80px;
   }
 
-  @include breakpoint('xxlarge') {
+  @include breakpoint("xxlarge") {
     padding: 142px 0 171px;
   }
 
@@ -2077,8 +2076,8 @@ ul.footer_menu {
   }
 
   &:before {
-    @include breakpoint('small') {
-      content: '';
+    @include breakpoint("small") {
+      content: "";
       position: absolute;
       top: 380px;
       left: 0;
@@ -2088,7 +2087,7 @@ ul.footer_menu {
       background: $primary-color;
     }
 
-    @include breakpoint('xxlarge') {
+    @include breakpoint("xxlarge") {
       top: 480px;
     }
   }
@@ -2096,7 +2095,7 @@ ul.footer_menu {
   .bottom-control {
     text-align: center;
 
-    @include breakpoint('big') {
+    @include breakpoint("big") {
       position: absolute;
       top: 52.5%;
       right: -80px;
@@ -2115,7 +2114,7 @@ ul.footer_menu {
     text-align: center;
     font-size: 14px;
 
-    @include breakpoint('small') {
+    @include breakpoint("small") {
       padding-top: 39px;
     }
 
@@ -2128,7 +2127,7 @@ ul.footer_menu {
     text-align: center;
     text-transform: capitalize;
 
-    @include breakpoint('small') {
+    @include breakpoint("small") {
       text-transform: uppercase;
       letter-spacing: 4px;
     }
@@ -2139,11 +2138,11 @@ ul.footer_menu {
   background: #312f30;
   padding: 40px 0;
   overflow: hidden;
-  @include breakpoint('big') {
+  @include breakpoint("big") {
     padding: 70px 0;
   }
-  
-  @include breakpoint('xxlarge') {
+
+  @include breakpoint("xxlarge") {
     padding: 120px 0;
   }
 
@@ -2153,7 +2152,7 @@ ul.footer_menu {
     color: #fff;
     text-transform: capitalize;
 
-    @include breakpoint('medium') {
+    @include breakpoint("medium") {
       letter-spacing: 4px;
       text-transform: uppercase;
     }
@@ -2163,13 +2162,13 @@ ul.footer_menu {
 .project__slider {
   position: relative;
 
-  @include breakpoint('xxlarge') {
+  @include breakpoint("xxlarge") {
     padding-top: 36px;
   }
 
   &:before {
-    @include breakpoint('medium') {
-      content: '';
+    @include breakpoint("medium") {
+      content: "";
       position: absolute;
       left: -9999px;
       right: -9999px;
@@ -2178,7 +2177,7 @@ ul.footer_menu {
       background: $primary-color;
     }
 
-    @include breakpoint('xxlarge') {
+    @include breakpoint("xxlarge") {
       top: 466px;
     }
   }
@@ -2186,13 +2185,13 @@ ul.footer_menu {
   .control_wrapper {
     text-align: center;
 
-    @include breakpoint('big') {
+    @include breakpoint("big") {
       position: absolute;
       left: -120px;
       bottom: 53px;
     }
 
-    @include breakpoint('xxlarge') {
+    @include breakpoint("xxlarge") {
       left: -170px;
     }
 
@@ -2211,10 +2210,8 @@ ul.footer_menu {
       }
     }
   }
-
-  
 }
-  
+
 .control_wrapper {
   .text {
     display: none;
@@ -2226,7 +2223,7 @@ ul.footer_menu {
   margin: 0 auto;
   position: relative;
 
-  @include breakpoint('xxlarge') {
+  @include breakpoint("xxlarge") {
     max-width: 1170px;
   }
 }
@@ -2237,7 +2234,7 @@ ul.footer_menu {
   overflow: hidden;
   position: relative;
 
-  @include breakpoint('xxlarge') {
+  @include breakpoint("xxlarge") {
     max-height: 681px;
   }
 
@@ -2250,7 +2247,7 @@ ul.footer_menu {
     z-index: 3;
 
     &:before {
-      content: '';
+      content: "";
       position: absolute;
       left: 0;
       right: 0;
@@ -2276,20 +2273,20 @@ ul.footer_menu {
   display: block;
   text-shadow: 0 0 12px rgba(#000, 0.6);
 
-  @include breakpoint('medium') {
+  @include breakpoint("medium") {
     font-size: 50px;
   }
 
-  @include breakpoint('big') {
+  @include breakpoint("big") {
     font-size: 60px;
   }
 
-  @include breakpoint('large') {
+  @include breakpoint("large") {
     text-align: left;
     padding-top: 0;
   }
 
-  @include breakpoint('xxlarge') {
+  @include breakpoint("xxlarge") {
     font-size: 90px;
   }
 
@@ -2303,20 +2300,19 @@ ul.footer_menu {
 }
 
 .project_text {
-  @include breakpoint('medium') {
+  @include breakpoint("medium") {
     left: 0;
     bottom: 80px;
     position: absolute;
     right: 0;
     z-index: 3;
-
   }
-  @include breakpoint('big') {
+  @include breakpoint("big") {
     bottom: 85px;
     left: -110px;
   }
 
-  @include breakpoint('xxlarge') {
+  @include breakpoint("xxlarge") {
     left: -156px;
   }
 }
@@ -2325,11 +2321,11 @@ ul.footer_menu {
   text-align: center;
   padding: 25px 0;
 
-  @include breakpoint('small') {
+  @include breakpoint("small") {
     padding: 40px 0 15px;
   }
 
-  @include breakpoint('xxlarge') {
+  @include breakpoint("xxlarge") {
     padding: 61px 0 46px;
   }
 }
@@ -2338,11 +2334,11 @@ ul.footer_menu {
   padding: 40px 0;
   position: relative;
 
-  @include breakpoint('medium') {
+  @include breakpoint("medium") {
     padding: 80px 0 40px;
   }
 
-  @include breakpoint('xxlarge') {
+  @include breakpoint("xxlarge") {
     padding: 140px 0 100px;
   }
 }
@@ -2351,22 +2347,22 @@ ul.footer_menu {
   position: relative;
   padding-bottom: 20px;
 
-  @include breakpoint('medium') {
+  @include breakpoint("medium") {
     padding: 0 0 12px;
   }
 
-  @include breakpoint('xxlarge') {
+  @include breakpoint("xxlarge") {
     padding: 0 0 42px;
   }
 
   &:after {
     clear: both;
-    content: '';
+    content: "";
     display: block;
   }
 
   &:before {
-    content: '';
+    content: "";
     position: absolute;
     bottom: 0;
     left: -9999px;
@@ -2383,7 +2379,7 @@ ul.footer_menu {
       margin-bottom: 0;
     }
 
-    @include breakpoint('small') {
+    @include breakpoint("small") {
       text-transform: uppercase;
       letter-spacing: 4px;
       float: left;
@@ -2395,10 +2391,10 @@ ul.footer_menu {
     margin: 10px 0 0;
     display: none;
 
-    @include breakpoint('small') {
+    @include breakpoint("small") {
       display: block;
     }
-    
+
     .slick-prev {
       margin-right: 16px;
     }
@@ -2408,22 +2404,22 @@ ul.footer_menu {
 .testimonial__slider {
   padding: 40px 0 0;
 
-  @include breakpoint('small') {
+  @include breakpoint("small") {
     padding: 50px 0 0;
   }
 
-  @include breakpoint('xxlarge') {
+  @include breakpoint("xxlarge") {
     padding: 100px 0 0;
   }
 
   .slick-current + .slick-active {
     .quote {
-      @include breakpoint('large') {
+      @include breakpoint("large") {
         padding: 0 0 0 158px;
       }
 
       &:before {
-        @include breakpoint('large') {
+        @include breakpoint("large") {
           left: 50px;
         }
       }
@@ -2436,16 +2432,16 @@ ul.footer_menu {
   quotes: none;
   position: relative;
 
-  @include breakpoint('medium') {
+  @include breakpoint("medium") {
     padding-left: 50px;
   }
 
-  @include breakpoint('large') {
+  @include breakpoint("large") {
     padding: 0 40px 0 104px;
   }
 
   &:before {
-    content: '“';
+    content: "“";
     font-size: 30px;
     line-height: 1;
     color: $primary-color;
@@ -2454,11 +2450,11 @@ ul.footer_menu {
     top: 0;
     font-weight: 700;
 
-    @include breakpoint('medium') {
+    @include breakpoint("medium") {
       font-size: 50px;
     }
 
-    @include breakpoint('large') {
+    @include breakpoint("large") {
       font-size: 80px;
     }
   }
@@ -2467,11 +2463,11 @@ ul.footer_menu {
     display: block;
     margin-bottom: 30px;
 
-    @include breakpoint('medium') {
+    @include breakpoint("medium") {
       margin-bottom: 45px;
     }
 
-    @include breakpoint('xxlarge') {
+    @include breakpoint("xxlarge") {
       margin-bottom: 66px;
     }
   }
@@ -2487,11 +2483,11 @@ ul.footer_menu {
 .success__block {
   padding: 40px 0;
 
-  @include breakpoint('medium') {
+  @include breakpoint("medium") {
     padding: 60px 0;
   }
 
-  @include breakpoint('xxlarge') {
+  @include breakpoint("xxlarge") {
     padding: 90px 0;
   }
 }
@@ -2505,12 +2501,12 @@ ul.footer_menu {
     text-align: center;
     margin-top: 30px;
 
-    @include breakpoint('medium') {
+    @include breakpoint("medium") {
       margin: 48px 0 0 105px;
       text-align: left;
     }
 
-    @include breakpoint('xxlarge') {
+    @include breakpoint("xxlarge") {
       margin-top: 78px;
     }
   }
@@ -2520,26 +2516,26 @@ ul.footer_menu {
   }
 }
 
-.embedWrapper { 
-  position: relative; 
-  padding-bottom: 56.25%; 
-  height: 0; 
-  overflow: hidden; 
-  max-width: 100%; 
+.embedWrapper {
+  position: relative;
+  padding-bottom: 56.25%;
+  height: 0;
+  overflow: hidden;
+  max-width: 100%;
 }
 
-.embedWrapper iframe, 
-.embedWrapper object, 
-.embedWrapper embed { 
-  position: absolute; 
-  top: 0; 
-  left: 0; 
-  width: 100%; 
+.embedWrapper iframe,
+.embedWrapper object,
+.embedWrapper embed {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
   height: 100%;
 }
 
 .successText {
-  @include breakpoint('small') {
+  @include breakpoint("small") {
     padding: 23px 0 0 15px;
   }
 
@@ -2548,21 +2544,20 @@ ul.footer_menu {
     position: relative;
     padding-bottom: 20px;
 
-    @include breakpoint('large') {
+    @include breakpoint("large") {
       margin: 0 0 40px 105px;
       padding: 0 0 20px;
       text-transform: uppercase;
       letter-spacing: 3px;
     }
 
-    @include breakpoint('xxlarge') {
+    @include breakpoint("xxlarge") {
       margin: 0 0 68px 105px;
       padding: 0 0 53px;
     }
 
-
     &:before {
-      content: '';
+      content: "";
       position: absolute;
       left: -300px;
       right: -9999px;
@@ -2580,16 +2575,16 @@ ul.footer_menu {
   height: 260px;
   background: #efefef;
 
-  @include breakpoint('small') {
+  @include breakpoint("small") {
     margin-right: -18px;
     height: 350px;
   }
 
-  @include breakpoint('large') {
+  @include breakpoint("large") {
     height: 500px;
   }
 
-  @include breakpoint('xxlarge') {
+  @include breakpoint("xxlarge") {
     height: 563px;
   }
 }
@@ -2627,20 +2622,21 @@ ul.footer_menu {
   position: relative;
   color: #fff;
 
-  h1,h2 {
+  h1,
+  h2 {
     color: #fff;
   }
 
   h1 {
     font-size: 40px;
     margin: 0 0 9px;
-    font-family: 'Maison Neue';
+    font-family: "Maison Neue";
 
-    @include breakpoint('medium') {
+    @include breakpoint("medium") {
       font-size: 70px;
     }
 
-    @include breakpoint('xxlarge') {
+    @include breakpoint("xxlarge") {
       font-size: 90px;
     }
 
@@ -2660,23 +2656,23 @@ ul.footer_menu {
   flex-wrap: wrap;
   align-items: flex-end;
 
-  @include breakpoint('medium') {
+  @include breakpoint("medium") {
     height: 550px;
     padding: 161px 0;
   }
 
-  @include breakpoint('xxlarge') {
+  @include breakpoint("xxlarge") {
     height: 740px;
   }
 
   .medium & {
     height: 380px;
 
-    @include breakpoint('medium') {
+    @include breakpoint("medium") {
       height: 440px;
     }
 
-    @include breakpoint('xxlarge') {
+    @include breakpoint("xxlarge") {
       height: 538px;
       padding: 90px 0 155px;
     }
@@ -2687,7 +2683,7 @@ ul.footer_menu {
     padding: 50px 0;
     align-items: center;
 
-    @include breakpoint('medium') {
+    @include breakpoint("medium") {
       height: 380px;
     }
   }
@@ -2695,11 +2691,11 @@ ul.footer_menu {
   .large & {
     height: auto;
 
-    @include breakpoint('medium') {
+    @include breakpoint("medium") {
       height: auto;
     }
 
-    @include breakpoint('xxlarge') {
+    @include breakpoint("xxlarge") {
       height: auto;
     }
   }
@@ -2716,11 +2712,11 @@ ul.footer_menu {
     margin-right: 30px;
     min-width: 210px;
 
-    @include breakpoint('small') {
+    @include breakpoint("small") {
       min-width: 200px;
     }
 
-    @include breakpoint('xxlarge') {
+    @include breakpoint("xxlarge") {
       min-width: 228px;
     }
   }
@@ -2737,12 +2733,12 @@ ul.footer_menu {
     display: block;
     font-size: 16px;
     font-weight: 700;
-    
-    @include breakpoint('medium') {
+
+    @include breakpoint("medium") {
       font-size: 20px;
     }
 
-    @include breakpoint('xxlarge') {
+    @include breakpoint("xxlarge") {
       font-size: 25px;
     }
   }
@@ -2759,7 +2755,7 @@ ul.footer_menu {
 .subnav__holder {
   display: none;
 
-  @include breakpoint('medium') {
+  @include breakpoint("medium") {
     display: block;
     background: #fff;
     font-size: 14px;
@@ -2768,7 +2764,7 @@ ul.footer_menu {
     letter-spacing: 0.1em;
   }
 
-  @include breakpoint('xxlarge') {
+  @include breakpoint("xxlarge") {
     margin-bottom: 47px;
   }
 
@@ -2795,7 +2791,7 @@ ul.footer_menu {
       color: #fff;
     }
 
-    @include breakpoint('xxlarge') {
+    @include breakpoint("xxlarge") {
       padding: 40px 38px;
     }
   }
@@ -2804,7 +2800,7 @@ ul.footer_menu {
 .aside__text {
   display: none;
 
-  @include breakpoint('large') {
+  @include breakpoint("large") {
     display: block;
     position: absolute;
     top: 50%;
@@ -2821,25 +2817,25 @@ ul.footer_menu {
 .history__text {
   position: relative;
   padding: 40px 0;
-  
-  @include breakpoint('medium') {
+
+  @include breakpoint("medium") {
     padding: 60px 0 27px;
   }
 
-  @include breakpoint('xxlarge') {
+  @include breakpoint("xxlarge") {
     padding: 100px 0 37px;
   }
-  
+
   h2 {
     text-transform: uppercase;
     letter-spacing: 1px;
 
-    @include breakpoint('medium') {
+    @include breakpoint("medium") {
       letter-spacing: 3px;
       margin-bottom: 30px;
     }
 
-    @include breakpoint('xxlarge') {
+    @include breakpoint("xxlarge") {
       margin-bottom: 50px;
     }
   }
@@ -2848,11 +2844,11 @@ ul.footer_menu {
     text-align: center;
     margin-bottom: 30px;
 
-    @include breakpoint('medium') {
+    @include breakpoint("medium") {
       margin-bottom: 46px;
     }
 
-    @include breakpoint('xxlarge') {
+    @include breakpoint("xxlarge") {
       margin-bottom: 76px;
     }
   }
@@ -2861,7 +2857,7 @@ ul.footer_menu {
 .historyYear {
   display: none;
 
-  @include breakpoint('medium') {
+  @include breakpoint("medium") {
     display: block;
     font-size: 30px;
     font-weight: 700;
@@ -2877,7 +2873,7 @@ ul.footer_menu {
     padding-right: 60px;
 
     &:before {
-      content: '';
+      content: "";
       width: 999px;
       left: 100%;
       top: 50%;
@@ -2893,18 +2889,18 @@ ul.footer_menu {
   .row {
     margin-bottom: 30px;
 
-    @include breakpoint('medium') {
+    @include breakpoint("medium") {
       margin-bottom: 85px;
     }
 
-    @include breakpoint('xxlarge') {
+    @include breakpoint("xxlarge") {
       margin-bottom: 165px;
     }
   }
 
   .col-sm-7 {
     .historytext_box {
-      @include breakpoint('medium') {
+      @include breakpoint("medium") {
         padding: 6px 0 0 78px;
       }
     }
@@ -2913,7 +2909,7 @@ ul.footer_menu {
       position: relative;
 
       &:before {
-        content: '';
+        content: "";
         position: absolute;
         left: 100%;
         top: 50%;
@@ -2929,7 +2925,7 @@ ul.footer_menu {
 .history__intro {
   margin-bottom: 30px;
 
-  @include breakpoint('medium') {
+  @include breakpoint("medium") {
     margin-bottom: 62px;
   }
 }
@@ -2937,18 +2933,18 @@ ul.footer_menu {
 .history__image {
   margin-bottom: 30px;
 
-  @include breakpoint('medium') {
+  @include breakpoint("medium") {
     margin-bottom: 80px;
   }
 
-  @include breakpoint('xxlarge') {
+  @include breakpoint("xxlarge") {
     margin-bottom: 127px;
   }
 }
 
 .historytext_box {
   padding: 40px 0 0;
-  @include breakpoint('medium') {
+  @include breakpoint("medium") {
     padding: 60px 60px 0 0;
   }
 }
@@ -2959,19 +2955,21 @@ ul.footer_menu {
   position: relative;
   padding: 40px 0;
 
-  @include breakpoint('medium') {
+  @include breakpoint("medium") {
     padding: 60px 0;
   }
 
-  @include breakpoint('medium') {
+  @include breakpoint("medium") {
     padding: 80px 0 60px;
   }
 
-  @include breakpoint('xxlarge') {
+  @include breakpoint("xxlarge") {
     padding: 196px 0;
   }
 
-  h2, h3, h4 {
+  h2,
+  h3,
+  h4 {
     color: $primary-color;
     text-transform: uppercase;
     letter-spacing: 2px;
@@ -2985,7 +2983,7 @@ ul.footer_menu {
 .mission__block {
   padding-bottom: 20px;
 
-  @include breakpoint('medium') {
+  @include breakpoint("medium") {
     padding-bottom: 100px;
   }
 
@@ -2994,14 +2992,14 @@ ul.footer_menu {
     position: relative;
     padding-bottom: 10px;
 
-    @include breakpoint('medium') {
+    @include breakpoint("medium") {
       padding-bottom: 42px;
       margin-bottom: 58px;
       letter-spacing: 4px;
     }
 
     &:before {
-      content: '';
+      content: "";
       position: absolute;
       left: -9999px;
       right: 0;
@@ -3019,7 +3017,7 @@ ul.footer_menu {
   font-size: 18px;
   line-height: 1.6;
 
-  @include breakpoint('medium') {
+  @include breakpoint("medium") {
     padding: 0 110px 63px 0;
     font-size: 23px;
     line-height: 1.9;
@@ -3027,19 +3025,19 @@ ul.footer_menu {
 }
 
 .mission__image {
-  @include breakpoint('medium') {
+  @include breakpoint("medium") {
     margin: 17px 8px 0 -470px;
   }
 }
 
 .vision__block {
   padding: 20px 0;
-  
-  @include breakpoint('medium') {
+
+  @include breakpoint("medium") {
     padding: 43px 0;
   }
 
-  @include breakpoint('xxlarge') {
+  @include breakpoint("xxlarge") {
     padding: 73px 0;
   }
 }
@@ -3049,7 +3047,7 @@ ul.footer_menu {
   line-height: 1.6;
   padding: 30px 0 0;
 
-  @include breakpoint('medium') {
+  @include breakpoint("medium") {
     font-size: 23px;
     line-height: 1.9;
     padding: 98px 0 0 120px;
@@ -3059,14 +3057,14 @@ ul.footer_menu {
     position: relative;
     padding-bottom: 10px;
 
-    @include breakpoint('medium') {
+    @include breakpoint("medium") {
       padding-bottom: 42px;
       margin-bottom: 58px;
       letter-spacing: 4px;
     }
 
     &:before {
-      content: '';
+      content: "";
       position: absolute;
       left: -299px;
       right: 0;
@@ -3080,11 +3078,11 @@ ul.footer_menu {
 .values__block {
   padding: 20px 0;
 
-  @include breakpoint('medium') {
+  @include breakpoint("medium") {
     padding: 54px 0 28px;
   }
 
-  @include breakpoint('xxlarge') {
+  @include breakpoint("xxlarge") {
     padding: 94px 0 48px;
   }
 
@@ -3093,12 +3091,12 @@ ul.footer_menu {
     border-bottom: 2px solid $primary-color;
     padding-bottom: 10px;
 
-    @include breakpoint('medium') {
+    @include breakpoint("medium") {
       padding-bottom: 26px;
       margin-bottom: 50px;
     }
 
-    @include breakpoint('xxlarge') {
+    @include breakpoint("xxlarge") {
       padding-bottom: 46px;
       margin-bottom: 90px;
     }
@@ -3113,12 +3111,12 @@ ul.footer_menu {
     height: 42px;
     color: $primary-color;
 
-    @include breakpoint('medium') {
+    @include breakpoint("medium") {
       width: 62px;
       height: 62px;
     }
 
-    @include breakpoint('xxlarge') {
+    @include breakpoint("xxlarge") {
       width: 72px;
       height: 72px;
     }
@@ -3127,7 +3125,7 @@ ul.footer_menu {
   .icon_box {
     margin-bottom: 20px;
 
-    @include breakpoint('medium') {
+    @include breakpoint("medium") {
       margin-bottom: 47px;
     }
   }
@@ -3138,11 +3136,11 @@ ul.footer_menu {
     color: $primary-color;
     margin-bottom: 10px;
 
-    @include breakpoint('medium') {
+    @include breakpoint("medium") {
       margin-bottom: 25px;
     }
 
-    @include breakpoint('xxlarge') {
+    @include breakpoint("xxlarge") {
       margin-bottom: 55px;
     }
   }
@@ -3157,28 +3155,28 @@ ul.footer_menu {
   position: relative;
   padding: 40px 0;
 
-  @include breakpoint('medium') {
+  @include breakpoint("medium") {
     padding: 83px 0 52px;
   }
 
-  @include breakpoint('xxlarge') {
+  @include breakpoint("xxlarge") {
     padding: 143px 0 92px;
   }
-  
+
   h2 {
     text-transform: uppercase;
     letter-spacing: 3px;
     text-align: center;
 
-    @include breakpoint('medium') {
+    @include breakpoint("medium") {
       margin-bottom: 38px;
     }
 
-    @include breakpoint('xxlarge') {
+    @include breakpoint("xxlarge") {
       margin-bottom: 68px;
     }
   }
-  
+
   .button {
     width: 100%;
   }
@@ -3187,25 +3185,25 @@ ul.footer_menu {
 .sustainability__image {
   margin-bottom: 30px;
 
-  @include breakpoint('medium') {
+  @include breakpoint("medium") {
     margin-bottom: 50px;
   }
 
-  @include breakpoint('xxlarge') {
+  @include breakpoint("xxlarge") {
     margin-bottom: 80px;
   }
 }
 
 .sustainability__contentbox {
   .content {
-    @include breakpoint('medium') {
+    @include breakpoint("medium") {
       padding-bottom: 60px;
     }
   }
 }
 
 .content + .text-hidden.visible {
-  @include breakpoint('medium') {
+  @include breakpoint("medium") {
     margin-top: -60px;
   }
 }
@@ -3213,19 +3211,19 @@ ul.footer_menu {
 .architect__block {
   padding: 30px 0;
 
-  @include breakpoint('medium') {
+  @include breakpoint("medium") {
     padding: 50px 0 60px;
   }
 
-  @include breakpoint('xxlarge') {
+  @include breakpoint("xxlarge") {
     padding: 100px 0 120px;
   }
 }
 
 .architect__contentbox {
   padding: 30px 0 0;
-  
-  @include breakpoint('medium') {
+
+  @include breakpoint("medium") {
     max-width: 970px;
     margin: -386px auto 0;
     background: #efefef;
@@ -3233,16 +3231,16 @@ ul.footer_menu {
     position: relative;
   }
 
-  @include breakpoint('xxlarge') {
+  @include breakpoint("xxlarge") {
     padding: 95px 100px;
   }
 
-  >div {
-    @include breakpoint('medium') {
+  > div {
+    @include breakpoint("medium") {
       padding-bottom: 27px;
     }
 
-    @include breakpoint('xxlarge') {
+    @include breakpoint("xxlarge") {
       padding-bottom: 47px;
     }
   }
@@ -3252,7 +3250,7 @@ ul.footer_menu {
     letter-spacing: 2px;
     margin-bottom: 20px;
 
-    @include breakpoint('medium') {
+    @include breakpoint("medium") {
       letter-spacing: 4px;
       margin: 0 0 44px;
     }
@@ -3266,11 +3264,11 @@ ul.footer_menu {
 .product__singlewrap {
   padding: 40px 0 20px;
 
-  @include breakpoint('medium') {
+  @include breakpoint("medium") {
     padding: 70px 0 37px;
   }
 
-  @include breakpoint('xxlarge') {
+  @include breakpoint("xxlarge") {
     padding: 100px 0 77px;
   }
 }
@@ -3278,7 +3276,7 @@ ul.footer_menu {
 .product__wrapper {
   padding: 40px 0;
 
-  @include breakpoint('medium') {
+  @include breakpoint("medium") {
     padding: 133px 0 72px;
   }
 
@@ -3295,7 +3293,7 @@ ul.footer_menu {
   margin-bottom: 35px;
 
   .product__desc {
-    >div {
+    > div {
       padding-bottom: 46px;
     }
   }
@@ -3309,7 +3307,7 @@ ul.footer_menu {
 .product__box-image {
   position: relative;
   margin: 0 0 40px;
-  
+
   .image__text {
     position: absolute;
     left: 0;
@@ -3334,7 +3332,6 @@ ul.footer_menu {
   }
 }
 
-
 .expand__content {
   padding: 40px 0 159px;
   text-align: center;
@@ -3346,7 +3343,7 @@ ul.footer_menu {
   .btn__wrap {
     padding-top: 20px;
 
-    @include breakpoint('medium') {
+    @include breakpoint("medium") {
       padding-top: 40px;
     }
   }
@@ -3362,13 +3359,13 @@ ul.footer_menu {
     padding-bottom: 20px;
     margin-bottom: 30px;
 
-    @include breakpoint('medium') {
+    @include breakpoint("medium") {
       padding: 0 0 134px;
       margin: 0 0 128px;
     }
 
     &:before {
-      content: '';
+      content: "";
       position: absolute;
       right: 0;
       height: 2px;
@@ -3382,7 +3379,7 @@ ul.footer_menu {
 .aside__image {
   margin-bottom: 30px;
 
-  @include breakpoint('medium') {
+  @include breakpoint("medium") {
     margin-left: 90px;
   }
 }
@@ -3392,7 +3389,8 @@ ul.footer_menu {
   color: #7e7e7e;
   overflow: hidden;
 
-  h2, h3 {
+  h2,
+  h3 {
     color: $primary-color;
   }
 }
@@ -3402,21 +3400,21 @@ ul.footer_menu {
   padding-bottom: 20px;
   margin-bottom: 30px;
 
-  @include breakpoint('small') {
+  @include breakpoint("small") {
     display: flex;
     justify-content: space-between;
     align-items: center;
     padding-bottom: 22px;
     margin-bottom: 44px;
   }
-  
-  @include breakpoint('xxlarge') {
+
+  @include breakpoint("xxlarge") {
     padding-bottom: 42px;
     margin-bottom: 74px;
   }
 
   &:before {
-    content: '';
+    content: "";
     position: absolute;
     left: 0;
     right: -9999px;
@@ -3430,7 +3428,7 @@ ul.footer_menu {
     margin: 0;
     letter-spacing: 1px;
 
-    @include breakpoint('medium') {
+    @include breakpoint("medium") {
       letter-spacing: 4px;
     }
   }
@@ -3439,7 +3437,7 @@ ul.footer_menu {
     display: block;
     color: $primary-color;
 
-    @include breakpoint('medium') {
+    @include breakpoint("medium") {
       font-size: 22px;
     }
   }
@@ -3459,11 +3457,11 @@ ul.footer_menu {
   overflow: hidden;
   outline: none !important;
 
-  @include breakpoint('small') {
+  @include breakpoint("small") {
     top: 28px;
   }
-  
-  @include breakpoint('medium') {
+
+  @include breakpoint("medium") {
     display: none;
   }
 
@@ -3482,7 +3480,7 @@ ul.footer_menu {
 
   &:before,
   &:after {
-    content: '';
+    content: "";
     margin: 0;
   }
 
@@ -3499,11 +3497,11 @@ ul.footer_menu {
 .contact__wrapper {
   padding: 45px 0;
 
-  @include breakpoint('medium') {
+  @include breakpoint("medium") {
     padding: 90px 0 50px;
   }
 
-  @include breakpoint('xxlarge') {
+  @include breakpoint("xxlarge") {
     padding: 130px 0;
   }
 }
@@ -3524,7 +3522,7 @@ form {
     margin-left: -15px;
     margin-right: -15px;
   }
-  
+
   [class^="col-"],
   [class*=" col-"] {
     padding-left: 15px;
@@ -3535,7 +3533,7 @@ form {
     .button {
       margin-bottom: 10px;
 
-      @include breakpoint('xxlarge') {
+      @include breakpoint("xxlarge") {
         margin-bottom: 18px;
       }
     }
@@ -3545,11 +3543,11 @@ form {
 .form_group {
   margin-bottom: 15px;
 
-  @include breakpoint('medium') {
+  @include breakpoint("medium") {
     margin-bottom: 22px;
   }
 
-  @include breakpoint('xxlarge') {
+  @include breakpoint("xxlarge") {
     margin-bottom: 25px;
   }
 }
@@ -3601,7 +3599,7 @@ ul.info__list {
     align-items: center;
     justify-content: center;
 
-    @include breakpoint('medium') {
+    @include breakpoint("medium") {
       width: 56px;
       height: 56px;
     }
@@ -3615,18 +3613,18 @@ ul.info__list {
     text-transform: uppercase;
     color: $primary-color;
   }
-  
+
   .text {
     display: block;
     color: #312f30;
     font-size: 20px;
     line-height: 1;
 
-    @include breakpoint('medium') {
+    @include breakpoint("medium") {
       font-size: 22px;
     }
 
-    @include breakpoint('xxlarge') {
+    @include breakpoint("xxlarge") {
       font-size: 25px;
     }
 
@@ -3645,24 +3643,24 @@ ul.info__list {
   margin-top: 50px;
   position: relative;
 
-  @include breakpoint('medium') {
+  @include breakpoint("medium") {
     margin-top: 90px;
   }
 
-  @include breakpoint('xxlarge') {
+  @include breakpoint("xxlarge") {
     margin-top: 151px;
   }
 
   h2 {
     font-size: 25px;
 
-    @include breakpoint('xxlarge') {
+    @include breakpoint("xxlarge") {
       font-size: 30px;
     }
   }
 
   &:before {
-    content: '';
+    content: "";
     position: absolute;
     top: 50%;
     right: 112%;
@@ -3676,12 +3674,12 @@ ul.info__list {
   border-bottom: 2px solid $primary-color;
   margin-bottom: 40px;
 
-  @include breakpoint('medium') {
+  @include breakpoint("medium") {
     padding-bottom: 19px;
     margin-bottom: 47px;
   }
 
-  @include breakpoint('xxlarge') {
+  @include breakpoint("xxlarge") {
     padding-bottom: 39px;
     margin-bottom: 67px;
   }
@@ -3705,14 +3703,14 @@ ul.check__list {
     padding: 0 6px 6px;
     width: 50%;
 
-    @include breakpoint('small') {
+    @include breakpoint("small") {
       padding-bottom: 0;
     }
   }
 
   &.custom {
     li {
-      @include breakpoint('small') {
+      @include breakpoint("small") {
         width: 50%;
       }
     }
@@ -3782,7 +3780,7 @@ ul.check__list {
     align-items: center;
     transition: background 0.3s, border 0.3s, color 0.3s;
 
-    @include breakpoint('small') {
+    @include breakpoint("small") {
       padding: 5px 10px 5px 50px;
     }
   }
@@ -3799,12 +3797,12 @@ ul.check__list {
     background: transparent;
     transition: border 0.3s, background 0.3s;
 
-    @include breakpoint('small') {
+    @include breakpoint("small") {
       left: 15px;
     }
 
     &:before {
-      content: '';
+      content: "";
       position: absolute;
       left: 3px;
       right: 3px;
@@ -3820,11 +3818,11 @@ ul.check__list {
 .single__wrapper {
   padding: 40px 0;
 
-  @include breakpoint('medium') {
+  @include breakpoint("medium") {
     padding: 55px 0;
   }
 
-  @include breakpoint('xxlarge') {
+  @include breakpoint("xxlarge") {
     padding: 95px 0;
   }
 }
@@ -3837,13 +3835,13 @@ ul.check__list {
     line-height: 1.055;
     text-transform: capitalize;
 
-    @include breakpoint('medium') {
+    @include breakpoint("medium") {
       font-size: 70px;
       max-width: 1170px;
       margin: 0 auto 15px;
     }
 
-    @include breakpoint('xxlarge') {
+    @include breakpoint("xxlarge") {
       font-size: 90px;
       margin: 0 auto 27px;
     }
@@ -3856,12 +3854,12 @@ ul.check__list {
   font-size: 16px;
   font-weight: 700;
   letter-spacing: 2px;
-  
-  @include breakpoint('medium') {
+
+  @include breakpoint("medium") {
     margin-bottom: 20px;
   }
 
-  @include breakpoint('xxlarge') {
+  @include breakpoint("xxlarge") {
     margin-bottom: 36px;
   }
 }
@@ -3869,7 +3867,7 @@ ul.check__list {
 .post__meta {
   display: none;
 
-  @include breakpoint('small') {
+  @include breakpoint("small") {
     display: block;
     font-size: 16px;
     font-weight: 700;
@@ -3878,7 +3876,7 @@ ul.check__list {
     margin-bottom: 23px;
   }
 
-  @include breakpoint('xxlarge') {
+  @include breakpoint("xxlarge") {
     margin-bottom: 53px;
   }
 
@@ -3890,14 +3888,14 @@ ul.check__list {
 .share__block {
   margin-bottom: 20px;
 
-  @include breakpoint('small') {
+  @include breakpoint("small") {
     display: flex;
     align-items: center;
     justify-content: center;
     margin-bottom: 47px;
   }
 
-  @include breakpoint('xxlarge') {
+  @include breakpoint("xxlarge") {
     margin-bottom: 77px;
   }
 
@@ -3910,20 +3908,20 @@ ul.check__list {
     display: block;
     margin-bottom: 10px;
 
-    @include breakpoint('small') {
+    @include breakpoint("small") {
       margin: 0 40px 0 0;
     }
   }
 
   .social-networks {
     position: relative;
-    @include breakpoint('small') {
+    @include breakpoint("small") {
       padding: 19px 0 19px 40px;
     }
 
     &:before {
-      @include breakpoint('small') {
-        content: '';
+      @include breakpoint("small") {
+        content: "";
         position: absolute;
         left: 0;
         top: 0;
@@ -3935,7 +3933,7 @@ ul.check__list {
 
     li {
       margin: 0 10px;
-      @include breakpoint('small') {
+      @include breakpoint("small") {
         margin: 0 35px 0 0;
       }
     }
@@ -3951,11 +3949,11 @@ ul.check__list {
   text-align: center;
   margin-bottom: 20px;
 
-  @include breakpoint('medium') {
+  @include breakpoint("medium") {
     margin: 0 auto 52px;
   }
 
-  @include breakpoint('xxlarge') {
+  @include breakpoint("xxlarge") {
     margin: 0 auto 102px;
   }
 }
@@ -3963,22 +3961,22 @@ ul.check__list {
 .blog__wrapper {
   padding: 40px 0;
 
-  @include breakpoint('medium') {
+  @include breakpoint("medium") {
     padding: 70px 0;
   }
 
-  @include breakpoint('xxlarge') {
+  @include breakpoint("xxlarge") {
     padding: 113px 0;
   }
 
   h1 {
     font-size: 40px;
 
-    @include breakpoint('medium') {
+    @include breakpoint("medium") {
       font-size: 75px;
     }
 
-    @include breakpoint('xxlarge') {
+    @include breakpoint("xxlarge") {
       font-size: 90px;
     }
   }
@@ -3989,23 +3987,23 @@ ul.check__list {
   border-bottom: 2px solid $primary-color;
   margin-bottom: 20px;
 
-  @include breakpoint('medium') {
+  @include breakpoint("medium") {
     margin-bottom: 53px;
   }
 
-  @include breakpoint('xxlarge') {
+  @include breakpoint("xxlarge") {
     margin-bottom: 83px;
   }
 
   &:after {
-    content: '';
+    content: "";
     display: block;
     clear: both;
   }
 
   h1 {
     float: left;
-    
+
     @media only screen and (max-width: 767px) {
       margin-bottom: 0;
     }
@@ -4016,7 +4014,7 @@ ul.check__list {
   float: right;
   display: none;
 
-  @include breakpoint('medium') {
+  @include breakpoint("medium") {
     display: block;
   }
 }
@@ -4061,7 +4059,6 @@ ul.check__list {
   }
 }
 
-
 .blog__content {
   .row {
     margin: 0 -85px;
@@ -4076,7 +4073,7 @@ ul.check__list {
 .blog_article {
   margin-bottom: 35px;
 
-  @include breakpoint('medium') {
+  @include breakpoint("medium") {
     margin-bottom: 58px;
   }
 
@@ -4098,7 +4095,7 @@ ul.check__list {
     letter-spacing: 2px;
     margin-bottom: 20px;
 
-    @include breakpoint('medium') {
+    @include breakpoint("medium") {
       font-size: 30px;
       margin-bottom: 30px;
     }
@@ -4133,11 +4130,11 @@ ul.check__list {
   overflow: hidden;
   position: relative;
 
-  @include breakpoint('medium') {
+  @include breakpoint("medium") {
     height: 350px;
   }
 
-  @include breakpoint('xxlarge') {
+  @include breakpoint("xxlarge") {
     height: 435px;
   }
 
@@ -4179,11 +4176,11 @@ ul.check__list {
   justify-content: space-between;
   padding: 18px 0;
 
-  @include breakpoint('medium') {
+  @include breakpoint("medium") {
     padding: 30px 45px;
   }
 
-  @include breakpoint('xxlarge') {
+  @include breakpoint("xxlarge") {
     padding: 39px 78px 34px 68px;
   }
 }
@@ -4191,18 +4188,18 @@ ul.check__list {
 .blog_text {
   padding: 20px 0;
 
-  @include breakpoint('medium') {
+  @include breakpoint("medium") {
     padding: 34px 45px;
   }
 
-  @include breakpoint('xxlarge') {
+  @include breakpoint("xxlarge") {
     padding: 44px 67px;
   }
 
   p {
     margin-bottom: 15px;
 
-    @include breakpoint('medium') {
+    @include breakpoint("medium") {
       margin-bottom: 39px;
     }
   }
@@ -4213,14 +4210,14 @@ ul.check__list {
   border-top: 2px solid #312f30;
   padding: 20px 0;
 
-  @include breakpoint('medium') {
+  @include breakpoint("medium") {
     margin-top: 89px;
     padding: 60px 0 24px;
   }
 
   .title,
   .pages {
-    @include breakpoint('small') {
+    @include breakpoint("small") {
       display: inline-block;
       vertical-align: middle;
       margin: 0 20px;
@@ -4233,8 +4230,8 @@ ul.check__list {
     font-size: 14px;
     letter-spacing: 2px;
     margin-bottom: 10px;
-    
-    @include breakpoint('small') {
+
+    @include breakpoint("small") {
       margin-bottom: 0;
     }
   }
@@ -4246,7 +4243,7 @@ ul.check__list {
     vertical-align: middle;
     margin: 0 3px 5px;
 
-    @include breakpoint('medium') {
+    @include breakpoint("medium") {
       margin: 0 6px;
     }
   }
@@ -4281,11 +4278,11 @@ ul.check__list {
 .project__detail {
   padding: 50px 0;
 
-  @include breakpoint('small') {
+  @include breakpoint("small") {
     padding: 70px 0 50px;
   }
 
-  @include breakpoint('xxlarge') {
+  @include breakpoint("xxlarge") {
     padding: 155px 0;
   }
 }
@@ -4298,12 +4295,12 @@ ul.check__list {
   position: relative;
   padding-bottom: 10px;
 
-  @include breakpoint('small') {
+  @include breakpoint("small") {
     padding-bottom: 39px;
   }
 
   &:before {
-    content: '';
+    content: "";
     position: absolute;
     right: 120px;
     bottom: 0;
@@ -4316,7 +4313,7 @@ ul.check__list {
 .project_infos {
   padding: 20px 0;
 
-  @include breakpoint('small') {
+  @include breakpoint("small") {
     padding: 53px 0 36px;
   }
 }
@@ -4326,11 +4323,11 @@ ul.check__list {
   padding-bottom: 25px;
   display: block;
 
-  @include breakpoint('small') {
+  @include breakpoint("small") {
     padding-bottom: 40px;
   }
 
-  @include breakpoint('xxlarge') {
+  @include breakpoint("xxlarge") {
     padding-bottom: 70px;
   }
 
@@ -4351,7 +4348,7 @@ ul.check__list {
     color: #312f30;
     letter-spacing: 1px;
 
-    @include breakpoint('small') {
+    @include breakpoint("small") {
       font-size: 30px;
     }
   }
@@ -4392,7 +4389,7 @@ ul.check__list {
     height: 100px;
     display: block;
     margin: 0 auto;
-    pointer-events:  none;
+    pointer-events: none;
   }
 
   .text {
@@ -4404,7 +4401,7 @@ ul.check__list {
     vertical-align: top;
     border-bottom: 2px solid $primary-color;
     transition: all 0.3s;
-    pointer-events:  none;
+    pointer-events: none;
   }
 }
 
@@ -4443,11 +4440,11 @@ ul.check__list {
 .project_desc {
   padding: 15px 0 0;
 
-  @include breakpoint('medium') {
+  @include breakpoint("medium") {
     padding: 26px 0 0;
   }
 
-  @include breakpoint('xxlarge') {
+  @include breakpoint("xxlarge") {
     padding: 36px 0 0;
   }
 
@@ -4463,7 +4460,7 @@ ul.check__list {
     font-size: 28px;
     margin-bottom: 9px;
 
-    @include breakpoint('xxlarge') {
+    @include breakpoint("xxlarge") {
       font-size: 33px;
     }
 
@@ -4500,7 +4497,7 @@ ul.check__list {
   margin-bottom: 30px;
   padding-bottom: 36px;
 
-  @include breakpoint('medium') {
+  @include breakpoint("medium") {
     margin-bottom: 0;
     border-bottom: none;
   }
@@ -4509,7 +4506,7 @@ ul.check__list {
 .filter__wrapper {
   display: none;
 
-  @include breakpoint('medium') {
+  @include breakpoint("medium") {
     display: block;
     float: left;
     width: 0;
@@ -4598,7 +4595,7 @@ ul.check__list {
     top: 0;
 
     &:before {
-      content: '';
+      content: "";
       left: 3px;
       right: 3px;
       top: 3px;
@@ -4618,23 +4615,23 @@ ul.check__list {
   height: 350px;
   background: #efefef;
 
-  @include breakpoint('small') {
+  @include breakpoint("small") {
     height: 600px;
     margin-bottom: 150px;
   }
 
-  @include breakpoint('large') {
+  @include breakpoint("large") {
     margin-bottom: 102px;
   }
 
-  @include breakpoint('xxlarge') {
+  @include breakpoint("xxlarge") {
     height: 805px;
     margin-bottom: 202px;
   }
 }
 
 .spec__image {
-  @include breakpoint('small') {
+  @include breakpoint("small") {
     margin-right: -250px;
   }
 }
@@ -4645,12 +4642,12 @@ ul.check__list {
   background: #efefef;
   padding: 30px 0 0;
 
-  @include breakpoint('small') {
+  @include breakpoint("small") {
     margin: 100px 0 0 -92px;
     padding: 68px 0 50px 101px;
   }
 
-  @include breakpoint('xxlarge') {
+  @include breakpoint("xxlarge") {
     margin: 100px 0 0 -92px;
     padding: 68px 0 100px 101px;
   }
@@ -4659,13 +4656,13 @@ ul.check__list {
     position: relative;
     padding-bottom: 5px;
 
-    @include breakpoint('small') {
+    @include breakpoint("small") {
       margin: 0 0 61px;
       padding: 0 0 35px;
     }
 
     &:before {
-      content: '';
+      content: "";
       position: absolute;
       left: 0;
       bottom: 0;
@@ -4679,11 +4676,11 @@ ul.check__list {
 .spec__wrapper {
   padding-bottom: 20px;
 
-  @include breakpoint('small') {
+  @include breakpoint("small") {
     padding-bottom: 55px;
   }
 
-  @include breakpoint('xxlarge') {
+  @include breakpoint("xxlarge") {
     padding-bottom: 155px;
   }
 }
@@ -4695,12 +4692,12 @@ ul.check__list {
     border-bottom: 2px solid $primary-color;
     padding-bottom: 5px;
 
-    @include breakpoint('small') {
+    @include breakpoint("small") {
       padding-bottom: 18px;
       margin: 0 0 56px;
     }
 
-    @include breakpoint('xxlarge') {
+    @include breakpoint("xxlarge") {
       padding-bottom: 38px;
       margin: 0 0 96px;
     }
@@ -4708,7 +4705,7 @@ ul.check__list {
 }
 
 .galley__image {
-  @include breakpoint('small') {
+  @include breakpoint("small") {
     column-count: 3;
     -webkit-column-count: 3;
     column-gap: 40px;
@@ -4720,7 +4717,7 @@ ul.check__list {
     cursor: pointer;
 
     &:before {
-      content: '';
+      content: "";
       position: absolute;
       left: 0;
       right: 0;
@@ -4730,8 +4727,8 @@ ul.check__list {
       opacity: 0;
       transition: opacity 0.3s;
     }
-    
-    @include breakpoint('small') {
+
+    @include breakpoint("small") {
       margin-bottom: 40px;
     }
 
@@ -4763,12 +4760,12 @@ ul.check__list {
 
 .product__overview {
   padding: 0 0 30px;
-  
-  @include breakpoint('medium') {
+
+  @include breakpoint("medium") {
     padding: 0 0 42px;
   }
 
-  @include breakpoint('xxlarge') {
+  @include breakpoint("xxlarge") {
     padding: 0 0 62px;
   }
 }
@@ -4780,19 +4777,19 @@ ul.check__list {
     position: relative;
     padding-bottom: 15px;
     margin-bottom: 20px;
-    
-    @include breakpoint('medium') {
+
+    @include breakpoint("medium") {
       padding: 0 0 27px;
       margin: 0 0 43px;
     }
 
-    @include breakpoint('xxlarge') {
+    @include breakpoint("xxlarge") {
       padding: 0 0 37px;
       margin: 0 0 63px;
     }
 
     &:before {
-      content: '';
+      content: "";
       position: absolute;
       left: 0;
       bottom: 0;
@@ -4813,7 +4810,7 @@ ul.check__list {
 
 .icon__wrapper {
   margin-bottom: 20px;
-  @include breakpoint('medium') {
+  @include breakpoint("medium") {
     margin-bottom: 42px;
   }
 
@@ -4822,11 +4819,11 @@ ul.check__list {
     color: $primary-color;
     width: 60px;
 
-    @include breakpoint('medium') {
+    @include breakpoint("medium") {
       width: 80px;
     }
 
-    @include breakpoint('xxlarge') {
+    @include breakpoint("xxlarge") {
       width: 100px;
     }
   }
@@ -4834,7 +4831,7 @@ ul.check__list {
   .benefit_text {
     overflow: hidden;
   }
-  
+
   h3 {
     text-transform: uppercase;
     letter-spacing: 2px;
@@ -4842,11 +4839,11 @@ ul.check__list {
     margin-bottom: 10px;
     font-size: 18px;
 
-    @include breakpoint('medium') {
+    @include breakpoint("medium") {
       margin: 0 0 12px;
     }
 
-    @include breakpoint('xxlarge') {
+    @include breakpoint("xxlarge") {
       margin-bottom: 17px;
       font-size: 21px;
     }
@@ -4856,12 +4853,12 @@ ul.check__list {
     width: 40px;
     height: 40px;
 
-    @include breakpoint('medium') {
+    @include breakpoint("medium") {
       width: 45px;
       height: 45px;
     }
 
-    @include breakpoint('xxlarge') {
+    @include breakpoint("xxlarge") {
       width: 62px;
       height: 62px;
     }
@@ -4869,7 +4866,7 @@ ul.check__list {
 }
 
 .product__benefit {
-  @include breakpoint('medium') {
+  @include breakpoint("medium") {
     padding: 0 0 60px;
   }
 }
@@ -4877,11 +4874,11 @@ ul.check__list {
 .application__wrapper {
   padding: 30px 0;
 
-  @include breakpoint('medium') {
+  @include breakpoint("medium") {
     padding: 100px 0 30px;
   }
 
-  @include breakpoint('xxlarge') {
+  @include breakpoint("xxlarge") {
     padding: 170px 0 50px;
   }
 }
@@ -4894,17 +4891,17 @@ ul.check__list {
   position: relative;
   padding-top: 30px;
 
-  @include breakpoint('medium') {
+  @include breakpoint("medium") {
     padding-top: 52px;
     margin-right: -50px;
   }
 
-  @include breakpoint('xxlarge') {
+  @include breakpoint("xxlarge") {
     padding-top: 72px;
   }
 
   &:before {
-    content: '';
+    content: "";
     top: 0;
     position: absolute;
     left: 0;
@@ -4916,11 +4913,11 @@ ul.check__list {
   .icon_wrap {
     margin-bottom: 5px;
 
-    @include breakpoint('medium') {
+    @include breakpoint("medium") {
       margin-bottom: 26px;
     }
 
-    @include breakpoint('xxlarge') {
+    @include breakpoint("xxlarge") {
       margin-bottom: 36px;
     }
   }
@@ -4931,7 +4928,7 @@ ul.check__list {
   flex-wrap: wrap;
   margin: 0 -25px 20px;
 
-  @include breakpoint('medium') {
+  @include breakpoint("medium") {
     margin: 0 -15px;
   }
 
@@ -4953,12 +4950,12 @@ ul.check__list {
     width: 30px;
     height: 30px;
 
-    @include breakpoint('medium') {
+    @include breakpoint("medium") {
       width: 45px;
       height: 45px;
     }
 
-    @include breakpoint('xxlarge') {
+    @include breakpoint("xxlarge") {
       width: 55px;
       height: 55px;
     }
@@ -4971,7 +4968,7 @@ ul.check__list {
     font-weight: 700;
     font-size: 14px;
 
-    @include breakpoint('xxlarge') {
+    @include breakpoint("xxlarge") {
       font-size: 16px;
     }
   }
@@ -4994,7 +4991,7 @@ ul.check__list {
     margin-right: -35px;
     bottom: 0px;
 
-    @include breakpoint('medium') {
+    @include breakpoint("medium") {
       right: 55px;
       bottom: 53px;
     }
@@ -5003,7 +5000,7 @@ ul.check__list {
       transform: translateX(-50%);
       margin-right: 0;
 
-      @include breakpoint('medium') {
+      @include breakpoint("medium") {
         transform: none;
         right: 88px;
       }
@@ -5017,13 +5014,13 @@ ul.check__list {
     padding: 20px 0 60px;
     text-align: center;
 
-    @include breakpoint('medium') {
+    @include breakpoint("medium") {
       padding: 50px 50px 50px 0;
       font-size: 25px;
       text-align: left;
     }
 
-    @include breakpoint('xxlarge') {
+    @include breakpoint("xxlarge") {
       padding: 50px 90px 50px 0;
       font-size: 30px;
       text-align: left;
@@ -5034,11 +5031,11 @@ ul.check__list {
 .product__description {
   padding: 35px 0;
 
-  @include breakpoint('medium') {
+  @include breakpoint("medium") {
     padding: 80px 0;
   }
 
-  @include breakpoint('xxlarge') {
+  @include breakpoint("xxlarge") {
     padding: 187px 0;
   }
 }
@@ -5047,7 +5044,7 @@ ul.check__list {
   max-width: 240px;
   margin-bottom: 20px;
 
-  @include breakpoint('small') {
+  @include breakpoint("small") {
     margin: 0 0 38px;
   }
 
@@ -5063,20 +5060,19 @@ ul.check__list {
     }
   }
 
-
   .image {
     height: 130px;
     overflow: hidden;
     position: relative;
     margin-bottom: 10px;
 
-    @include breakpoint('small') {
+    @include breakpoint("small") {
       height: 240px;
       margin-bottom: 37px;
     }
 
     &:before {
-      content: '';
+      content: "";
       position: absolute;
       left: 0;
       right: 0;
@@ -5108,12 +5104,12 @@ ul.check__list {
     font-weight: 700;
     letter-spacing: 1px;
     text-transform: uppercase;
-    
-    @include breakpoint('small') {
+
+    @include breakpoint("small") {
       font-size: 18px;
     }
 
-    @include breakpoint('xxlarge') {
+    @include breakpoint("xxlarge") {
       font-size: 20px;
     }
   }
@@ -5122,11 +5118,11 @@ ul.check__list {
 .product-species {
   padding-bottom: 20px;
 
-  @include breakpoint('medium') {
+  @include breakpoint("medium") {
     padding: 0 0 105px;
   }
 
-  @include breakpoint('xxlarge') {
+  @include breakpoint("xxlarge") {
     padding: 0 0 195px;
   }
 }
@@ -5199,7 +5195,7 @@ ul.block-icons {
     li {
       width: 50%;
 
-      @include breakpoint('small') {
+      @include breakpoint("small") {
         width: 33.33%;
       }
     }
@@ -5218,11 +5214,11 @@ ul.block-icons {
 }
 
 .shapes__boxes {
-  @include breakpoint('medium') {
+  @include breakpoint("medium") {
     padding-bottom: 70px;
   }
 
-  @include breakpoint('xxlarge') {
+  @include breakpoint("xxlarge") {
     padding-bottom: 202px;
   }
 }
@@ -5230,11 +5226,11 @@ ul.block-icons {
 .installation__block {
   padding-bottom: 30px;
 
-  @include breakpoint('medium') {
+  @include breakpoint("medium") {
     padding-bottom: 110px;
   }
 
-  @include breakpoint('xxlarge') {
+  @include breakpoint("xxlarge") {
     padding-bottom: 166px;
   }
 
@@ -5242,13 +5238,13 @@ ul.block-icons {
     position: relative;
     padding-bottom: 10px;
 
-    @include breakpoint('medium') {
+    @include breakpoint("medium") {
       padding: 0 0 50px;
       margin: 0 0 59px;
     }
-    
+
     &:before {
-      content: '';
+      content: "";
       position: absolute;
       left: 0;
       bottom: 0;
@@ -5263,7 +5259,7 @@ ul.block-icons {
   padding-top: 51px;
   padding-bottom: 30px;
 
-  @include breakpoint('medium') {
+  @include breakpoint("medium") {
     padding-bottom: 0;
   }
 }
@@ -5275,11 +5271,11 @@ ul.block-icons {
 .useful__info {
   padding-bottom: 30px;
 
-  @include breakpoint('medium') {
+  @include breakpoint("medium") {
     padding-bottom: 80px;
   }
 
-  @include breakpoint('xxlarge') {
+  @include breakpoint("xxlarge") {
     padding-bottom: 217px;
   }
 }
@@ -5309,7 +5305,7 @@ ul.block-icons {
     box-shadow: none !important;
     outline-width: 0;
 
-    @include breakpoint('medium') {
+    @include breakpoint("medium") {
       font-size: 22px;
     }
 
@@ -5324,7 +5320,7 @@ ul.block-icons {
     top: 8px;
     color: $primary-color;
 
-    @include breakpoint('medium') {
+    @include breakpoint("medium") {
       top: 28px;
     }
 
@@ -5332,7 +5328,7 @@ ul.block-icons {
       width: 12px;
       height: 12px;
 
-      @include breakpoint('medium') {
+      @include breakpoint("medium") {
         width: 16px;
         height: 16px;
       }
@@ -5345,7 +5341,7 @@ ul.block-icons {
   border-bottom: 1px solid #433f41;
   padding: 10px 0 10px 30px;
 
-  @include breakpoint('medium') {
+  @include breakpoint("medium") {
     padding: 30px 0 30px 46px;
   }
 
@@ -5369,11 +5365,11 @@ ul.block-icons {
 .pricing__block {
   padding: 40px 0;
 
-  @include breakpoint('medium') {
+  @include breakpoint("medium") {
     padding: 90px 0;
   }
 
-  @include breakpoint('xxlarge') {
+  @include breakpoint("xxlarge") {
     padding: 157px 0;
   }
 }
@@ -5389,25 +5385,25 @@ ul.block-icons {
 .pricing__text {
   padding-bottom: 30px;
 
-  @include breakpoint('medium') {
+  @include breakpoint("medium") {
     padding-bottom: 0;
   }
   h2 {
     position: relative;
     padding-bottom: 14px;
 
-    @include breakpoint('medium') {
+    @include breakpoint("medium") {
       padding-bottom: 13px;
       margin-bottom: 34px;
     }
 
-    @include breakpoint('xxlarge') {
+    @include breakpoint("xxlarge") {
       padding-bottom: 43px;
       margin-bottom: 64px;
     }
 
     &:before {
-      content: '';
+      content: "";
       position: absolute;
       left: -9999px;
       bottom: 0;
@@ -5436,7 +5432,7 @@ ul.block-icons {
 }
 
 .price__image {
-  @include breakpoint('medium') {
+  @include breakpoint("medium") {
     margin-left: -48px;
   }
 }
@@ -5444,11 +5440,11 @@ ul.block-icons {
 .request__block {
   padding: 40px 0;
 
-  @include breakpoint('medium') {
+  @include breakpoint("medium") {
     padding: 90px 0;
   }
 
-  @include breakpoint('xxlarge') {
+  @include breakpoint("xxlarge") {
     padding: 166px 0;
   }
 
@@ -5456,13 +5452,13 @@ ul.block-icons {
     position: relative;
     padding-bottom: 15px;
 
-    @include breakpoint('medium') {
+    @include breakpoint("medium") {
       padding-bottom: 43px;
       margin-bottom: 64px;
     }
 
     &:before {
-      content: '';
+      content: "";
       position: absolute;
       left: -9999px;
       bottom: 0;
@@ -5480,7 +5476,7 @@ ul.block-icons {
 .request__image {
   margin-bottom: 20px;
 
-  @include breakpoint('medium') {
+  @include breakpoint("medium") {
     margin-right: -20px;
   }
 }
@@ -5547,7 +5543,7 @@ ul.block-icons {
   transition: opacity 0.3s, visibility 0.3s;
   padding: 60px 15px;
 
-  @include breakpoint('medium') {
+  @include breakpoint("medium") {
     padding: 60px 80px;
   }
 
@@ -5600,7 +5596,7 @@ ul.block-icons {
   padding-bottom: 10px;
   margin-bottom: 15px;
 
-  @include breakpoint('medium') {
+  @include breakpoint("medium") {
     padding: 0 0 30px;
     margin-bottom: 50px;
   }
@@ -5611,7 +5607,7 @@ ul.block-icons {
   }
 
   &:before {
-    content: '';
+    content: "";
     position: absolute;
     left: 0;
     right: -9999px;
@@ -5663,7 +5659,7 @@ ul.block-icons {
   max-width: 800px;
   margin: 0 auto;
 
-  @include breakpoint('medium') {
+  @include breakpoint("medium") {
     padding: 80px 40px;
   }
 
@@ -5673,13 +5669,13 @@ ul.block-icons {
   }
 
   .slick-slide {
-    display :flex;
+    display: flex;
     flex-wrap: wrap;
     align-items: center;
     justify-content: center;
     height: 100%;
 
-    >div {
+    > div {
       width: 100%;
       height: 100%;
       display: flex;
@@ -5722,7 +5718,7 @@ ul.block-icons {
       width: 25px;
       height: 25px;
 
-      @include breakpoint('medium') {
+      @include breakpoint("medium") {
         width: 40px;
         height: 40px;
       }
@@ -5731,7 +5727,7 @@ ul.block-icons {
     &.slick-prev {
       left: -5px;
 
-      @include breakpoint('medium') {
+      @include breakpoint("medium") {
         left: -100px;
       }
     }
@@ -5739,7 +5735,7 @@ ul.block-icons {
     &.slick-next {
       right: -5px;
 
-      @include breakpoint('medium') {
+      @include breakpoint("medium") {
         right: -100px;
       }
     }
@@ -5757,7 +5753,6 @@ ul.block-icons {
   }
 }
 
-
 .map__container {
   width: 100%;
   height: 600px;
@@ -5765,8 +5760,8 @@ ul.block-icons {
 
 .map_popup {
   padding: 2px 5px;
-  font-family: 'Maison Neue';
-  
+  font-family: "Maison Neue";
+
   .title,
   .subheading {
     display: block;
@@ -5788,7 +5783,6 @@ ul.block-icons {
     height: 20px;
   }
 }
-
 
 form {
   .button {
@@ -5830,7 +5824,7 @@ form {
 
 .extra__content {
   h2 {
-    @include breakpoint('small') {
+    @include breakpoint("small") {
       font-size: 30px;
       letter-spacing: 2px;
       line-height: 1.4;
@@ -5873,7 +5867,7 @@ form {
   line-height: 42px;
 
   &:before {
-    content: 'CHOOSE FILE';
+    content: "CHOOSE FILE";
     position: absolute;
     left: 0;
     top: 0;
@@ -5939,7 +5933,7 @@ form {
   transition: all 0.3s;
   display: none;
 
-  @include breakpoint('medium') {
+  @include breakpoint("medium") {
     display: flex;
   }
 
@@ -5957,25 +5951,25 @@ form {
   .header__meta {
     margin-right: 0;
 
-    @include breakpoint('medium') {
+    @include breakpoint("medium") {
       display: block;
     }
   }
 
   .header__bottomwrap {
-    @include breakpoint('medium') {
+    @include breakpoint("medium") {
       padding: 17px 0;
     }
   }
 
   .header__nav {
-    @include breakpoint('medium') {
+    @include breakpoint("medium") {
       display: none;
     }
   }
 
   .header__button {
-    @include breakpoint('small') {
+    @include breakpoint("small") {
       position: static;
       left: 0;
       transform: none;
@@ -5986,7 +5980,7 @@ form {
     }
 
     .button {
-      @include breakpoint('small') {
+      @include breakpoint("small") {
         background: #312f30;
         color: $primary-color;
         font-size: 14px;
@@ -6001,20 +5995,20 @@ form {
   }
 
   .header {
-    @include breakpoint('medium') {
+    @include breakpoint("medium") {
       height: 77px;
     }
-    @include breakpoint('xxlarge') {
+    @include breakpoint("xxlarge") {
       height: 88px;
     }
   }
 
   #main {
-    @include breakpoint('medium') {
+    @include breakpoint("medium") {
       padding-top: 77px;
     }
 
-    @include breakpoint('xxlarge') {
+    @include breakpoint("xxlarge") {
       padding-top: 88px;
     }
   }
@@ -6030,7 +6024,7 @@ form {
       position: relative;
 
       &:before {
-        content: '';
+        content: "";
         position: absolute;
         left: -9999px;
         right: -9999px;
@@ -6047,11 +6041,11 @@ form {
   color: #7e7e7e;
   padding: 20px 0;
 
-  @include breakpoint('small') {
+  @include breakpoint("small") {
     padding: 40px 0;
   }
 
-  @include breakpoint('medium') {
+  @include breakpoint("medium") {
     padding: 60px 0;
   }
 
@@ -6075,7 +6069,7 @@ form {
   .icon__box {
     padding-bottom: 30px;
 
-    @include breakpoint('medium') {
+    @include breakpoint("medium") {
       padding-bottom: 20px;
     }
   }
@@ -6085,7 +6079,7 @@ form {
   padding: 30px 0;
   position: relative;
 
-  @include breakpoint('medium') {
+  @include breakpoint("medium") {
     padding: 90px 0;
   }
 
@@ -6095,13 +6089,13 @@ form {
     margin-bottom: 30px;
     text-transform: uppercase;
 
-    @include breakpoint('large') {
+    @include breakpoint("large") {
       padding-bottom: 32px;
       margin-bottom: 44px;
     }
 
     &:before {
-      content: '';
+      content: "";
       position: absolute;
       right: -300px;
       bottom: 0;
@@ -6120,7 +6114,7 @@ form {
   }
 
   .sustainability_image {
-    @include breakpoint('medium') {
+    @include breakpoint("medium") {
       margin: 0 -400px 0 -30px;
     }
   }
@@ -6130,7 +6124,7 @@ form {
   position: relative;
   z-index: 3;
 
-  @include breakpoint('large') {
+  @include breakpoint("large") {
     margin: 0 -20px 0 -100px;
   }
 }
@@ -6179,7 +6173,7 @@ form {
   color: #7e7e7e;
   padding: 30px 0;
 
-  @include breakpoint('medium') {
+  @include breakpoint("medium") {
     padding: 60px 0;
   }
 
@@ -6190,13 +6184,13 @@ form {
     padding: 0 0 20px;
     margin: 0 0 20px;
 
-    @include breakpoint('medium') {
+    @include breakpoint("medium") {
       margin-bottom: 80px;
       padding-bottom: 40px;
     }
 
     &:before {
-      content: '';
+      content: "";
       position: absolute;
       right: -9999px;
       bottom: 0;
@@ -6216,7 +6210,7 @@ form {
 .pricingff__image {
   display: none;
 
-  @include breakpoint('medium') {
+  @include breakpoint("medium") {
     display: block;
     position: absolute;
     left: 0;
@@ -6228,7 +6222,7 @@ form {
   .bg_image {
     z-index: 2;
 
-    >div {
+    > div {
       width: 100%;
       height: 100%;
     }
@@ -6243,11 +6237,9 @@ form {
 .why__product {
   padding: 30px 0;
 
-  @include breakpoint('medium') {
+  @include breakpoint("medium") {
     padding: 40px 0 70px;
   }
-
-
 
   .general__heading {
     padding-bottom: 20px;
@@ -6255,7 +6247,7 @@ form {
     text-align: left;
     padding-top: 20px;
 
-    @include breakpoint('medium') {
+    @include breakpoint("medium") {
       padding-top: 0;
     }
 
@@ -6271,7 +6263,7 @@ form {
     .info {
       display: inline-block;
 
-      @include breakpoint('large') {
+      @include breakpoint("large") {
         float: right;
       }
 
@@ -6306,8 +6298,8 @@ form {
 .articletext__box {
   font-size: 16px;
   padding-bottom: 40px;
-  
-  @include breakpoint('medium') {
+
+  @include breakpoint("medium") {
     padding: 0 0 70px;
   }
 
@@ -6320,7 +6312,7 @@ form {
   .img__wrap {
     margin-bottom: 15px;
 
-    @include breakpoint('medium') {
+    @include breakpoint("medium") {
       margin-bottom: 30px;
     }
   }
@@ -6350,10 +6342,10 @@ form {
   position: relative;
   padding: 30px 0;
 
-  @include breakpoint('medium') {
+  @include breakpoint("medium") {
     padding: 60px 0 70px;
   }
-  
+
   .main_heading {
     text-align: center;
     max-width: 1000px;
@@ -6394,12 +6386,12 @@ form {
     padding-bottom: 30px;
     margin-bottom: 50px;
 
-    @include breakpoint('medium') {
+    @include breakpoint("medium") {
       text-align: left;
     }
 
     &:before {
-      content: '';
+      content: "";
       position: absolute;
       right: -9999px;
       bottom: 0;
@@ -6407,7 +6399,7 @@ form {
       height: 2px;
       background: $primary-color;
     }
-    
+
     h2 {
       line-height: 1.2;
       margin-bottom: 10px;
@@ -6435,7 +6427,7 @@ form {
 .pricing__formwrap {
   padding: 40px 0;
 
-  @include breakpoint('medium') {
+  @include breakpoint("medium") {
     padding: 100px 0 70px;
   }
 }
@@ -6525,5 +6517,18 @@ form {
   }
   100% {
     transform: translate(24px, 0);
+  }
+}
+
+.fixed-request-pricing {
+  position: fixed;
+  z-index: 999;
+  right: 20px;
+  bottom: 20px;
+  background: $primary-color;
+  color: #fff;
+  padding: 0.5rem;
+  @include breakpoint("large") {
+    display: none;
   }
 }

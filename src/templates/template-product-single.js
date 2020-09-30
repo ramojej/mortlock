@@ -1,147 +1,278 @@
-import React, { Component } from "react";
-import { graphql } from "gatsby";
-import BackgroundImage from 'gatsby-background-image';
-import scrollTo from 'gatsby-plugin-smoothscroll';
+import React, { Component } from "react"
+import { graphql } from "gatsby"
+import BackgroundImage from "gatsby-background-image"
+import scrollTo from "gatsby-plugin-smoothscroll"
 
-import Layout from '../components/layout';
-import SEO from "../components/seo";
-import SubMenu from '../components/global-subnav';
-import Button from "../components/global/button";
+import Layout from "../components/layout"
+import SEO from "../components/seo"
+import SubMenu from "../components/global-subnav"
+import Button from "../components/global/button"
 
-import ProductOverview from "../components/productsingle/product-overview";
-import ProductBenefit from "../components/productsingle/product-benefit";
-import ProductApplication from "../components/productsingle/product-application";
-import ProductFaq from "../components/productsingle/product-faq";
-import ProductSpecies from "../components/productsingle/product-species";
-import ProductInstallation from "../components/productsingle/product-installation";
-import BattenShapeAndSize from "../components/productsingle/product-battensize";
+import ProductOverview from "../components/productsingle/product-overview"
+import ProductBenefit from "../components/productsingle/product-benefit"
+import ProductApplication from "../components/productsingle/product-application"
+import ProductFaq from "../components/productsingle/product-faq"
+import ProductSpecies from "../components/productsingle/product-species"
+import ProductInstallation from "../components/productsingle/product-installation"
+import BattenShapeAndSize from "../components/productsingle/product-battensize"
 
-import RequestSample from "../components/global/global-request-sample";
-import PricingBlock from "../components/global/global-pricing-block";
-
+import RequestSample from "../components/global/global-request-sample"
+import PricingBlock from "../components/global/global-pricing-block"
 
 class Page extends Component {
   render() {
     const bannerContent = {
-      banner_image: this.props.data.wordpressPage.acf.product_single_banner_image,
-      banner_image_overlay: this.props.data.wordpressPage.acf.product_single_banner_image_overlay,
-      banner_heading: this.props.data.wordpressPage.acf.product_single_banner_heading,
-      banner_description: this.props.data.wordpressPage.acf.product_single_banner_sub_heading,
-      banner_buttons: this.props.data.wordpressPage.acf.product_single_banner_buttons
+      banner_image: this.props.data.wordpressPage.acf
+        .product_single_banner_image,
+      banner_image_overlay: this.props.data.wordpressPage.acf
+        .product_single_banner_image_overlay,
+      banner_heading: this.props.data.wordpressPage.acf
+        .product_single_banner_heading,
+      banner_description: this.props.data.wordpressPage.acf
+        .product_single_banner_sub_heading,
+      banner_buttons: this.props.data.wordpressPage.acf
+        .product_single_banner_buttons,
     }
 
     const productOverview = {
       product_title: this.props.data.wordpressPage.acf.product_title,
-      product_overview_aside_title: this.props.data.wordpressPage.acf.product_overview_aside_title,
-      product_aside_image: this.props.data.wordpressPage.acf.product_aside_image,
-      product_description: this.props.data.wordpressPage.acf.product_description,
-      product_expand_description: this.props.data.wordpressPage.acf.product_expand_description
+      product_overview_aside_title: this.props.data.wordpressPage.acf
+        .product_overview_aside_title,
+      product_aside_image: this.props.data.wordpressPage.acf
+        .product_aside_image,
+      product_description: this.props.data.wordpressPage.acf
+        .product_description,
+      product_expand_description: this.props.data.wordpressPage.acf
+        .product_expand_description,
     }
 
     const productBenefit = {
-      product_benefit_image: this.props.data.wordpressPage.acf.product_benefit_image,
-      product_benefit_title: this.props.data.wordpressPage.acf.product_benefit_title,
-      product_benefit_columns: this.props.data.wordpressPage.acf.product_benefit_columns
+      product_benefit_image: this.props.data.wordpressPage.acf
+        .product_benefit_image,
+      product_benefit_title: this.props.data.wordpressPage.acf
+        .product_benefit_title,
+      product_benefit_columns: this.props.data.wordpressPage.acf
+        .product_benefit_columns,
     }
 
     const productApplication = {
-      application_content: this.props.data.wordpressPage.acf.application_content,
-      application_gallery_image: this.props.data.wordpressPage.acf.application_gallery_image
+      application_content: this.props.data.wordpressPage.acf
+        .application_content,
+      application_gallery_image: this.props.data.wordpressPage.acf
+        .application_gallery_image,
     }
 
     const timber_species = {
       species: this.props.data.wordpressPage.acf.timber_species,
-      timber_finishes_download_text: this.props.data.wordpressPage.acf.timber_finishes_download_text,
-      timber_finishes_button_style: this.props.data.wordpressPage.acf.timber_finishes_button_style,
-      timber_finishes_download_link: this.props.data.wordpressPage.acf.timber_finishes_download_link
+      timber_finishes_download_text: this.props.data.wordpressPage.acf
+        .timber_finishes_download_text,
+      timber_finishes_button_style: this.props.data.wordpressPage.acf
+        .timber_finishes_button_style,
+      timber_finishes_download_link: this.props.data.wordpressPage.acf
+        .timber_finishes_download_link,
     }
 
     const productInstallation = {
       installation_image: this.props.data.wordpressPage.acf.installation_image,
       installation_title: this.props.data.wordpressPage.acf.installation_title,
-      installation_description: this.props.data.wordpressPage.acf.installation_description,
-      installation_button_text: this.props.data.wordpressPage.acf.installation_button_text,
-      installation_button_link: this.props.data.wordpressPage.acf.installation_button_link,
-      installation_button_style: this.props.data.wordpressPage.acf.installation_button_style
+      installation_description: this.props.data.wordpressPage.acf
+        .installation_description,
+      installation_button_text: this.props.data.wordpressPage.acf
+        .installation_button_text,
+      installation_button_link: this.props.data.wordpressPage.acf
+        .installation_button_link,
+      installation_button_style: this.props.data.wordpressPage.acf
+        .installation_button_style,
     }
 
-    const userLinks = this.props.data.wordpressPage.acf.useful_info;
+    const userLinks = this.props.data.wordpressPage.acf.useful_info
 
     const batten_size = {
-      shape_and_size_title: this.props.data.wordpressPage.acf.shape_and_size_title,
-      batten_shapes: this.props.data.wordpressPage.acf.batten_shapes
+      shape_and_size_title: this.props.data.wordpressPage.acf
+        .shape_and_size_title,
+      batten_shapes: this.props.data.wordpressPage.acf.batten_shapes,
     }
 
     const productFAQ = {
       faq_title: this.props.data.wordpressPage.acf.faq_title,
-      faqs: this.props.data.wordpressPage.acf.faqs
+      faqs: this.props.data.wordpressPage.acf.faqs,
     }
 
     const productPricing = {
       pricing_title: this.props.data.wordpressPage.acf.pricing_title,
-      pricing_description: this.props.data.wordpressPage.acf.pricing_description,
+      pricing_description: this.props.data.wordpressPage.acf
+        .pricing_description,
       pricing_image: this.props.data.wordpressPage.acf.pricing_image,
-      pricing_guide_download_link: this.props.data.wordpressPage.acf.pricing_guide_download_link
+      pricing_guide_download_link: this.props.data.wordpressPage.acf
+        .pricing_guide_download_link,
     }
 
     const requestSample = {
-      request_sample_image: this.props.data.wordpressPage.acf.request_sample_image,
-      request_block_heading: this.props.data.wordpressPage.acf.request_block_heading,
-      request_sample_brochure: this.props.data.wordpressPage.acf.request_sample_brochure,
-      request_sample_description: this.props.data.wordpressPage.acf.request_sample_description,
-      request_sample_heading: this.props.data.wordpressPage.acf.product_single_banner_heading
+      request_sample_image: this.props.data.wordpressPage.acf
+        .request_sample_image,
+      request_block_heading: this.props.data.wordpressPage.acf
+        .request_block_heading,
+      request_sample_brochure: this.props.data.wordpressPage.acf
+        .request_sample_brochure,
+      request_sample_description: this.props.data.wordpressPage.acf
+        .request_sample_description,
+      request_sample_heading: this.props.data.wordpressPage.acf
+        .product_single_banner_heading,
     }
 
     const postID = this.props.data.wordpressPage.wordpress_id
 
-    const submenus = ['product-overview', 'technical', 'pricing'];
+    const submenus = ["product-overview", "technical", "pricing"]
 
-    let requestSampleTag = {};
-    let requestPricingTag = {};
+    let requestSampleTag = {}
+    let requestPricingTag = {}
 
-    if(postID === 573) {
-      requestSampleTag = {'event': 'WebLead', 'eventAction': 'RequestSample', 'eventLabel': 'ClassicTimberDecking'};
-      requestPricingTag = {'event': 'WebLead', 'eventAction': 'RequestPricing', 'eventLabel': 'ClassicTimberDecking'};
-    } else if(postID === 561) {
-      requestSampleTag = {'event': 'WebLead', 'eventAction': 'RequestSample', 'eventLabel': 'MarineTimberDecking'};
-      requestPricingTag = {'event': 'WebLead', 'eventAction': 'RequestPricing', 'eventLabel': 'MarineTimberDecking'};
-    } else if(postID === 567) {
-      requestSampleTag = {'event': 'WebLead', 'eventAction': 'RequestSample', 'eventLabel': 'MetroPlankTimberDecking'};
-      requestPricingTag = {'event': 'WebLead', 'eventAction': 'RequestPricing', 'eventLabel': 'MetroPlankTimberDecking'};      
-    } else if(postID === 339) {
-      requestSampleTag = {'event': 'WebLead', 'eventAction': 'RequestSample', 'eventLabel': 'ProPlankTimberCladding'};
-      requestPricingTag = {'event': 'WebLead', 'eventAction': 'RequestPricing', 'eventLabel': 'ProPlankTimberCladding'};
-    } else if(postID === 4205) {
-      requestSampleTag = {'event': 'WebLead', 'eventAction': 'RequestSample', 'eventLabel': 'ShouSugiTimberCladding'};
-      requestPricingTag = {'event': 'WebLead', 'eventAction': 'RequestPricing', 'eventLabel': 'ShouSugiTimberCladding'};
-    } else if(postID === 4209) {
-      requestSampleTag = {'event': 'WebLead', 'eventAction': 'RequestSample', 'eventLabel': 'TrendPlankTimberCladding'};
-      requestPricingTag = {'event': 'WebLead', 'eventAction': 'RequestPricing', 'eventLabel': 'TrendPlankTimberCladding'};
+    if (postID === 573) {
+      requestSampleTag = {
+        event: "WebLead",
+        eventAction: "RequestSample",
+        eventLabel: "ClassicTimberDecking",
+      }
+      requestPricingTag = {
+        event: "WebLead",
+        eventAction: "RequestPricing",
+        eventLabel: "ClassicTimberDecking",
+      }
+    } else if (postID === 561) {
+      requestSampleTag = {
+        event: "WebLead",
+        eventAction: "RequestSample",
+        eventLabel: "MarineTimberDecking",
+      }
+      requestPricingTag = {
+        event: "WebLead",
+        eventAction: "RequestPricing",
+        eventLabel: "MarineTimberDecking",
+      }
+    } else if (postID === 567) {
+      requestSampleTag = {
+        event: "WebLead",
+        eventAction: "RequestSample",
+        eventLabel: "MetroPlankTimberDecking",
+      }
+      requestPricingTag = {
+        event: "WebLead",
+        eventAction: "RequestPricing",
+        eventLabel: "MetroPlankTimberDecking",
+      }
+    } else if (postID === 339) {
+      requestSampleTag = {
+        event: "WebLead",
+        eventAction: "RequestSample",
+        eventLabel: "ProPlankTimberCladding",
+      }
+      requestPricingTag = {
+        event: "WebLead",
+        eventAction: "RequestPricing",
+        eventLabel: "ProPlankTimberCladding",
+      }
+    } else if (postID === 4205) {
+      requestSampleTag = {
+        event: "WebLead",
+        eventAction: "RequestSample",
+        eventLabel: "ShouSugiTimberCladding",
+      }
+      requestPricingTag = {
+        event: "WebLead",
+        eventAction: "RequestPricing",
+        eventLabel: "ShouSugiTimberCladding",
+      }
+    } else if (postID === 4209) {
+      requestSampleTag = {
+        event: "WebLead",
+        eventAction: "RequestSample",
+        eventLabel: "TrendPlankTimberCladding",
+      }
+      requestPricingTag = {
+        event: "WebLead",
+        eventAction: "RequestPricing",
+        eventLabel: "TrendPlankTimberCladding",
+      }
     }
 
     return (
       <Layout>
-        <SEO 
-          description={this.props.data.wordpressPage.yoast.metadesc ? this.props.data.wordpressPage.yoast.metadesc : null} 
-          title={this.props.data.wordpressPage.yoast.title ? this.props.data.wordpressPage.yoast.title : null} 
+        <SEO
+          description={
+            this.props.data.wordpressPage.yoast.metadesc
+              ? this.props.data.wordpressPage.yoast.metadesc
+              : null
+          }
+          title={
+            this.props.data.wordpressPage.yoast.title
+              ? this.props.data.wordpressPage.yoast.title
+              : null
+          }
         />
-        <div className='inner__banner' data-sample={requestSampleTag} data-price={requestPricingTag}>
+        <div
+          className="inner__banner"
+          data-sample={requestSampleTag}
+          data-price={requestPricingTag}
+        >
           <div className="bg__image has-overlay">
-            { bannerContent.banner_image ? <BackgroundImage fluid={bannerContent.banner_image.localFile.childImageSharp.fluid} /> : null }
+            {bannerContent.banner_image ? (
+              <BackgroundImage
+                fluid={
+                  bannerContent.banner_image.localFile.childImageSharp.fluid
+                }
+              />
+            ) : null}
           </div>
           <div className="container">
-            <div className="inner__bannerbox" data-sal="slide-up" data-sal-easing="ease" data-sal-delay="5">
+            <div
+              className="inner__bannerbox"
+              data-sal="slide-up"
+              data-sal-easing="ease"
+              data-sal-delay="5"
+            >
               <div className="box">
-                <h1 className={ !bannerContent.banner_description ? "text-center" : null } dangerouslySetInnerHTML={{ __html: bannerContent.banner_heading }} />
-                { bannerContent.banner_description ? <span className="inner__bannertext" dangerouslySetInnerHTML={{ __html: bannerContent.banner_description }} /> : null }
-                { bannerContent.banner_buttons ?
+                <h1
+                  className={
+                    !bannerContent.banner_description ? "text-center" : null
+                  }
+                  dangerouslySetInnerHTML={{
+                    __html: bannerContent.banner_heading,
+                  }}
+                />
+                {bannerContent.banner_description ? (
+                  <span
+                    className="inner__bannertext"
+                    dangerouslySetInnerHTML={{
+                      __html: bannerContent.banner_description,
+                    }}
+                  />
+                ) : null}
+                {bannerContent.banner_buttons ? (
                   <div className="inner__bannerbuttons">
-                    {bannerContent.banner_buttons.map((button, index) => (
-                      (index === 1) ? 
-                      <Button type="external" link={button.product_single_button_link} text={button.product_single_button_text} style={button.product_single_button_style} key={index} /> : 
-                      <button className="button primary" key={index} data-id={button.product_single_button_link} onClick={() => scrollTo(`${button.product_single_button_link}`)}>{button.product_single_button_text}</button>
-                    ))}
-                  </div> : null }
+                    {bannerContent.banner_buttons.map((button, index) =>
+                      index === 1 ? (
+                        <Button
+                          type="external"
+                          link={button.product_single_button_link}
+                          text={button.product_single_button_text}
+                          style={button.product_single_button_style}
+                          key={index}
+                        />
+                      ) : (
+                        <button
+                          className="button primary"
+                          key={index}
+                          data-id={button.product_single_button_link}
+                          onClick={() =>
+                            scrollTo(`${button.product_single_button_link}`)
+                          }
+                        >
+                          {button.product_single_button_text}
+                        </button>
+                      )
+                    )}
+                  </div>
+                ) : null}
               </div>
             </div>
           </div>
@@ -162,27 +293,67 @@ class Page extends Component {
                 <h2>Useful Info</h2>
               </div>
               <div className="info__slider row center-sm">
-                {userLinks ? userLinks.map((link, index) => (
-                  <div className="col-sm-3" data-sal="slide-up" 
-                  data-sal-easing="ease"
-                  data-sal-delay="5" key={index}>
-                    <div className="article__box">
-                      <div className="icon_box">
-                        <div dangerouslySetInnerHTML={{ __html: link.useful_icon }} />
+                {userLinks
+                  ? userLinks.map((link, index) => (
+                      <div
+                        className="col-sm-3"
+                        data-sal="slide-up"
+                        data-sal-easing="ease"
+                        data-sal-delay="5"
+                        key={index}
+                      >
+                        <div className="article__box">
+                          <div className="icon_box">
+                            <div
+                              dangerouslySetInnerHTML={{
+                                __html: link.useful_icon,
+                              }}
+                            />
+                          </div>
+                          <h4>{link.userful_info_heading}</h4>
+                          <p
+                            dangerouslySetInnerHTML={{
+                              __html: link.useful_info_text,
+                            }}
+                          />
+                          <a
+                            className="link"
+                            href={link.useful_info_link.link}
+                            target="_blank"
+                            rel="noreferrer"
+                          >
+                            {link.useful_info_link_text}
+                          </a>
+                        </div>
                       </div>
-                      <h4>{link.userful_info_heading}</h4>
-                      <p dangerouslySetInnerHTML={{ __html: link.useful_info_text }} />
-                      <a className="link" href={link.useful_info_link.link} target="_blank" rel="noreferrer">{link.useful_info_link_text}</a>
-                    </div>
-                  </div>
-                )) : null }
+                    ))
+                  : null}
               </div>
             </div>
             <ProductFaq data={productFAQ} />
           </div>
         </div>
-        <PricingBlock pageID={postID} id={submenus[2]} data={productPricing} finishes={timber_species} battensize={batten_size} location={this.props.location.href} gtag={requestPricingTag} />
-        <RequestSample wpPageId={postID} data={requestSample} location={this.props.location.href} gtag={requestSampleTag} />
+        <PricingBlock
+          pageID={postID}
+          id={submenus[2]}
+          data={productPricing}
+          finishes={timber_species}
+          battensize={batten_size}
+          location={this.props.location.href}
+          gtag={requestPricingTag}
+        />
+        <RequestSample
+          wpPageId={postID}
+          data={requestSample}
+          location={this.props.location.href}
+          gtag={requestSampleTag}
+        />
+        <div
+          className="fixed-request-pricing"
+          onClick={() => scrollTo(`#pricing`)}
+        >
+          Request Pricing
+        </div>
       </Layout>
     )
   }
