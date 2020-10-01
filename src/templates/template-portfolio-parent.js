@@ -41,6 +41,21 @@ const Page = props => {
     else products.push(category.node)
   })
 
+  const newProductTypes = [
+    ...productTypes.filter(item => !item.name.includes("Other")),
+    productTypes.find(item => item.name.includes("Other")),
+  ]
+
+  const newProjectTypes = [
+    ...projectTypes.filter(item => !item.name.includes("Other")),
+    projectTypes.find(item => item.name.includes("Other")),
+  ]
+
+  const newProducts = [
+    ...products.filter(item => !item.name.includes("Other")),
+    products.find(item => item.name.includes("Other")),
+  ]
+
   const toggleVisibility = () => {
     setActiveFilter(!activeFilter)
   }
@@ -126,7 +141,7 @@ const Page = props => {
                 <div className="col-sm-4">
                   <span className="title">Application</span>
                   <ul className="list">
-                    {products.map(product => (
+                    {newProducts.map(product => (
                       <li key={product.id}>
                         <label
                           className="custom-check"
@@ -150,7 +165,7 @@ const Page = props => {
                 <div className="col-sm-4">
                   <span className="title">Product</span>
                   <ul className="list">
-                    {productTypes.map(product => (
+                    {newProductTypes.map(product => (
                       <li key={product.id}>
                         <label
                           className="custom-check"
@@ -173,7 +188,7 @@ const Page = props => {
                 <div className="col-sm-4">
                   <span className="title">Timber Species</span>
                   <ul className="list">
-                    {projectTypes.map(product => (
+                    {newProjectTypes.map(product => (
                       <li key={product.name}>
                         <label
                           className="custom-check"
