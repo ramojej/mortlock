@@ -2590,7 +2590,7 @@ ul.footer_menu {
 }
 
 .video__content {
-  position: absolute;
+  position: static;
   padding-bottom: 56.25%;
   height: 0;
   left: 0;
@@ -4717,6 +4717,18 @@ ul.check__list {
     margin-bottom: 25px;
     position: relative;
     cursor: pointer;
+    max-height: 220px;
+    @include breakpoint("small") {
+      max-height: 150px;
+    }
+    @include breakpoint("medium") {
+      max-height: 220px;
+    }
+    overflow: hidden;
+
+    .gatsby-image-wrapper {
+      height: 100%;
+    }
 
     &:before {
       content: "";
