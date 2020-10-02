@@ -66,6 +66,7 @@ const Project = ({ ...props }) => {
   }
 
   const pageData = props.data.wordpressWpProject
+  console.log(pageData)
 
   const bannerContent = {
     banner_image: pageData.acf.project_banner_image,
@@ -268,8 +269,11 @@ const Project = ({ ...props }) => {
                           <path d="m96.363 70.91c-2.0078 0-3.6367 1.6289-3.6367 3.6367v13.039l-26.52-26.523c-1.418-1.418-3.7227-1.418-5.1445 0-1.418 1.4219-1.418 3.7266 0 5.1445l26.523 26.52h-13.039c-2.0078 0-3.6367 1.6289-3.6367 3.6367 0 2.0078 1.6289 3.6367 3.6367 3.6367h21.816c0.23828 0 0.47656-0.027344 0.71484-0.074219 0.10547-0.019531 0.20312-0.058593 0.30859-0.089843 0.12109-0.035157 0.24609-0.066407 0.36719-0.11328 0.12109-0.050781 0.23047-0.12109 0.34375-0.18359 0.09375-0.050781 0.19141-0.089843 0.28125-0.15234 0.40234-0.26562 0.74219-0.60938 1.0078-1.0078 0.0625-0.089844 0.10156-0.18359 0.15234-0.27734 0.0625-0.11328 0.13281-0.22656 0.18359-0.34766 0.046875-0.12109 0.078125-0.24219 0.11328-0.36719 0.03125-0.10156 0.070312-0.20312 0.09375-0.30859 0.042968-0.23828 0.070312-0.47656 0.070312-0.71484v-21.816c0-2.0078-1.6289-3.6367-3.6367-3.6367" />
                         </svg>
                       </span>
-                      <img
-                        src={image.gallery_image.link}
+                      <Img
+                        //src={image.gallery_image.link}
+                        fluid={
+                          image.gallery_image.localFile.childImageSharp.fluid
+                        }
                         alt="Mortlock Timber"
                       />
                     </div>
@@ -307,8 +311,11 @@ const Project = ({ ...props }) => {
               {pageData.acf.gallery_images
                 ? pageData.acf.gallery_images.map((image, index) => (
                     <div className="image" key={index}>
-                      <img
-                        src={image.gallery_image.link}
+                      <Img
+                        //src={image.gallery_image.link}
+                        fluid={
+                          image.gallery_image.localFile.childImageSharp.fluid
+                        }
                         alt="Mortlock Timber"
                       />
                     </div>

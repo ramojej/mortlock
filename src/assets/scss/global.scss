@@ -4709,6 +4709,8 @@ ul.check__list {
     column-count: 3;
     -webkit-column-count: 3;
     column-gap: 40px;
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
   }
 
   .image {
@@ -4726,6 +4728,7 @@ ul.check__list {
       background: rgba(#000, 0.6);
       opacity: 0;
       transition: opacity 0.3s;
+      z-index: 9;
     }
 
     @include breakpoint("small") {
@@ -4750,6 +4753,7 @@ ul.check__list {
     top: 20px;
     color: #fff;
     transition: opacity 0.3s;
+    z-index: 9;
 
     .icon {
       width: 25px;
@@ -5694,6 +5698,10 @@ ul.block-icons {
     flex-wrap: wrap;
     align-items: center;
     justify-content: center;
+
+    .gatsby-image-wrapper {
+      width: 100%;
+    }
 
     img {
       max-height: 100%;
