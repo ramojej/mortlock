@@ -7,7 +7,7 @@ module.exports = {
     title: `Architectural Timber | Hardwood Suppliers | Mortlock Timber`,
     description: `Mortlock Timber is Australia's leading designer, manufacturer and hardwood supplier of architectural timber products, with over 80 years of combined experience.`,
     author: `@bipubajgai`,
-    siteUrl: `https://gatsby.dilatedigital.com.au`
+    siteUrl: `https://gatsby.dilatedigital.com.au`,
   },
   plugins: [
     {
@@ -15,20 +15,18 @@ module.exports = {
       options: {
         id: "GTM-MR25ZVL",
         includeInDevelopment: true,
-        defaultDataLayer: { platform: "gatsby" }
-      }
+        defaultDataLayer: { platform: "gatsby" },
+      },
     },
     {
       resolve: `gatsby-plugin-alias-imports`,
       options: {
         alias: {
-          "@src": "src"
+          "@src": "src",
           // "@components": "src/components",
         },
-        extensions: [
-          "js",
-        ],
-      }
+        extensions: ["js"],
+      },
     },
     `gatsby-plugin-sitemap`,
     `gatsby-plugin-smoothscroll`,
@@ -45,6 +43,7 @@ module.exports = {
     },
     `gatsby-transformer-sharp`,
     `gatsby-plugin-sharp`,
+    `@wardpeet/gatsby-image-nextgen`,
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
@@ -64,8 +63,8 @@ module.exports = {
             src: `/favicon/android-chrome-512x512.png`,
             sizes: `192x192`,
             type: `image/png`,
-          }
-        ]
+          },
+        ],
       },
     },
     {
@@ -159,7 +158,7 @@ module.exports = {
           "**/tags",
           "**/taxonomies",
           "**/menus",
-          "**/project"
+          "**/project",
         ],
         // Blacklisted routes using glob patterns
         excludedRoutes: ["**/posts/1456"],
@@ -169,7 +168,7 @@ module.exports = {
         // Defaults to false
         keepMediaSizes: false,
         // use a custom normalizer which is applied after the built-in ones.
-        normalizer: function({ entities }) {
+        normalizer: function ({ entities }) {
           return entities
         },
         // The normalizers option allows you to manipulate the array of internal
@@ -185,7 +184,7 @@ module.exports = {
           ...normalizers,
           {
             name: "nameOfTheFunction",
-            normalizer: function({ entities }) {
+            normalizer: function ({ entities }) {
               // manipulate entities here
               return entities
             },
@@ -196,5 +195,6 @@ module.exports = {
     // this (optional) plugin enables Progressive Web App + Offline functionality
     // To learn more, visit: https://gatsby.dev/offline
     // `gatsby-plugin-offline`,
+    `gatsby-plugin-preact`,
   ],
 }

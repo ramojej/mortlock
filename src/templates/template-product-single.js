@@ -1,6 +1,6 @@
 import React, { Component } from "react"
 import { graphql } from "gatsby"
-import BackgroundImage from "gatsby-background-image"
+import { GatsbyImage } from "@wardpeet/gatsby-image-nextgen/compat"
 import scrollTo from "gatsby-plugin-smoothscroll"
 
 import Layout from "../components/layout"
@@ -216,10 +216,12 @@ class Page extends Component {
         >
           <div className="bg__image has-overlay">
             {bannerContent.banner_image ? (
-              <BackgroundImage
+              <GatsbyImage
                 fluid={
                   bannerContent.banner_image.localFile.childImageSharp.fluid
                 }
+                layout="responsive"
+                alt="banner"
               />
             ) : null}
           </div>
@@ -383,6 +385,11 @@ export const pageQuery = graphql`
             childImageSharp {
               fluid(maxWidth: 1920) {
                 ...GatsbyImageSharpFluid_withWebp
+                fallback: base64
+                src
+                srcSet
+                srcWebp
+                srcSetWebp
               }
             }
           }

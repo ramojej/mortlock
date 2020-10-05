@@ -1,6 +1,5 @@
 import React, { Component } from "react"
 import axios from "axios"
-import qs from "qs"
 
 import Helpers from "../helpers/helpers"
 import Loader from "../helpers/loader"
@@ -33,6 +32,7 @@ class ProductPricingForm extends Component {
         email: "",
         phone: "",
         company: "",
+        state: "",
       },
       passedValidation: false,
       submitActive: false,
@@ -261,10 +261,11 @@ class ProductPricingForm extends Component {
                     <select
                       name="state"
                       id="state"
+                      className="noEmpty"
                       value={this.state.fields.state || ""}
                       onChange={this.handleInputChange}
                     >
-                      <option value="default">- Select -</option>
+                      <option value="">- Select -</option>
                       <option value="ACT">ACT</option>
                       <option value="NSW">NSW</option>
                       <option value="NT">NT</option>
@@ -275,6 +276,9 @@ class ProductPricingForm extends Component {
                       <option value="WA">WA</option>
                       <option value="International">International</option>
                     </select>
+                    {this.state.errors.state !== "" && (
+                      <span className="error">{this.state.errors.state}</span>
+                    )}
                   </div>
                 </div>
               </div>

@@ -340,10 +340,10 @@ label,
     position: relative;
     z-index: 3;
 
-    img {
-      opacity: 0;
-      visibility: hidden;
-    }
+    // img {
+    //   opacity: 0;
+    //   visibility: hidden;
+    // }
   }
 }
 
@@ -2574,6 +2574,14 @@ ul.footer_menu {
   margin-bottom: 30px;
   height: 260px;
   background: #efefef;
+
+  .bg__image {
+    position: static;
+
+    img {
+      object-fit: cover;
+    }
+  }
 
   @include breakpoint("small") {
     margin-right: -18px;

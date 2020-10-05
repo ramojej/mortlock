@@ -1,7 +1,6 @@
 import React from "react"
 import { Link } from "gatsby"
-import Img from "gatsby-image"
-import BGImage from "gatsby-background-image"
+import { GatsbyImage } from "@wardpeet/gatsby-image-nextgen/compat"
 import Slider from "react-slick"
 
 const GlobalProjectSlider = ({ ...props }) => {
@@ -45,21 +44,16 @@ const GlobalProjectSlider = ({ ...props }) => {
                 <div className="project_image">
                   <Link to={project.node.path}>
                     {project.node.featured_media && (
-                      <BGImage
-                        className="bg__image"
-                        fluid={
-                          project.node.featured_media.localFile.childImageSharp
-                            .fluid
-                        }
-                      >
-                        <Img
+                      <div className="bg__image">
+                        <GatsbyImage
                           fluid={
                             project.node.featured_media.localFile
                               .childImageSharp.fluid
                           }
+                          layout="responsive"
                           alt="Mortlock Timber"
                         />
-                      </BGImage>
+                      </div>
                     )}
                   </Link>
                 </div>

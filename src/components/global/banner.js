@@ -1,7 +1,6 @@
 import React, { useState } from "react"
 import Slider from "react-slick"
-
-import BackgroundImage from "gatsby-background-image"
+import { GatsbyImage } from "@wardpeet/gatsby-image-nextgen/compat"
 
 import Button from "./button"
 
@@ -76,11 +75,12 @@ const Banner = ({ ...props }) => {
                 <div className="slide" key={index}>
                   <div className="bg__image has-overlay">
                     {slide.slider_banner_image ? (
-                      <BackgroundImage
+                      <GatsbyImage
                         fluid={
                           slide.slider_banner_image.localFile.childImageSharp
                             .fluid
                         }
+                        layout="responsive"
                         alt="Mortlock Timber"
                       />
                     ) : null}
@@ -137,8 +137,10 @@ const Banner = ({ ...props }) => {
       >
         <div className="bg__image has-overlay">
           {bannerContent.banner_image ? (
-            <BackgroundImage
+            <GatsbyImage
               fluid={bannerContent.banner_image.localFile.childImageSharp.fluid}
+              layout="responsive"
+              alt="banner"
             />
           ) : null}
         </div>
