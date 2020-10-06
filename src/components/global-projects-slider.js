@@ -1,6 +1,6 @@
 import React from "react"
 import { Link } from "gatsby"
-import { GatsbyImage } from "@wardpeet/gatsby-image-nextgen/compat"
+import GatsbyImage from "gatsby-image"
 import Slider from "react-slick"
 
 const GlobalProjectSlider = ({ ...props }) => {
@@ -50,7 +50,6 @@ const GlobalProjectSlider = ({ ...props }) => {
                             project.node.featured_media.localFile
                               .childImageSharp.fluid
                           }
-                          layout="responsive"
                           alt="Mortlock Timber"
                         />
                       </div>

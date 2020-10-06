@@ -2042,6 +2042,11 @@ ul.footer_menu {
 }
 
 .news__slider {
+  .bg__image {
+    img {
+      object-fit: cover;
+    }
+  }
   @include breakpoint("small") {
     padding: 78px 70px 0 70px;
   }

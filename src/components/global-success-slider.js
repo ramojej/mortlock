@@ -1,8 +1,7 @@
 import React, { useState } from "react"
 import Slider from "react-slick"
 
-import BackgroundImage from "gatsby-background-image"
-import { GatsbyImage } from "@wardpeet/gatsby-image-nextgen/compat"
+import GatsbyImage from "gatsby-image"
 
 const GlobalSuccessStory = ({ ...props }) => {
   const content = props.contentData
@@ -92,7 +91,6 @@ const GlobalSuccessStory = ({ ...props }) => {
                     </div>
                     <GatsbyImage
                       className="bg__image"
-                      layout="responsive"
                       alt="success"
                       fluid={
                         success.video_thumbnail.localFile.childImageSharp.fluid
