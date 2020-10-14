@@ -1,70 +1,159 @@
-import React, { Component } from "react";
-import { graphql, Link } from "gatsby";
-import Img from 'gatsby-image';
-import BackgroundImage from 'gatsby-background-image';
-import scrollTo from 'gatsby-plugin-smoothscroll';
+import React, { Component } from "react"
+import { graphql, Link } from "gatsby"
+import Img from "gatsby-image"
+import scrollTo from "gatsby-plugin-smoothscroll"
 
-import LayoutLanding from "../components/layout-landing";
-import SEO from "../components/seo";
-import Button from "../components/global/button";
+import LayoutLanding from "../components/layout-landing"
+import SEO from "../components/seo"
+import Button from "../components/global/button"
 
-import LandingPageForm from '../components/forms/landing-page-form-5153';
-import GlobalTestimonialSlider from "../components/global-testimonial-slider";
+import LandingPageForm from "../components/forms/landing-page-form-5153"
+import GlobalTestimonialSlider from "../components/global-testimonial-slider"
 
 class Page extends Component {
   render() {
     const bannerContent = {
       banner_image: this.props.data.wordpressPage.acf.landing_page_banner_image,
-      banner_image_overlay: this.props.data.wordpressPage.acf.landing_page_banner_image_overlay,
-      banner_heading: this.props.data.wordpressPage.acf.landing_page_banner_heading,
-      banner_description: this.props.data.wordpressPage.acf.landing_page_banner_subheading,
-      banner_buttons: this.props.data.wordpressPage.acf.landing_page_banner_buttons
+      banner_image_overlay: this.props.data.wordpressPage.acf
+        .landing_page_banner_image_overlay,
+      banner_heading: this.props.data.wordpressPage.acf
+        .landing_page_banner_heading,
+      banner_description: this.props.data.wordpressPage.acf
+        .landing_page_banner_subheading,
+      banner_buttons: this.props.data.wordpressPage.acf
+        .landing_page_banner_buttons,
     }
-    
+
     const latestTestomonial = {
-      testimonialHeading: this.props.data.allWordpressAcfOptions.edges[0].node.options.client_testimonials_heading,
-      allTestimonials: this.props.data.allWordpressAcfOptions.edges[0].node.options.client_testimonials,
+      testimonialHeading: this.props.data.allWordpressAcfOptions.edges[0].node
+        .options.client_testimonials_heading,
+      allTestimonials: this.props.data.allWordpressAcfOptions.edges[0].node
+        .options.client_testimonials,
     }
-    const product_features = this.props.data.wordpressPage.acf.product_features;
+    const product_features = this.props.data.wordpressPage.acf.product_features
 
     return (
       <LayoutLanding>
-        <SEO 
-          description={this.props.data.wordpressPage.yoast.metadesc ? this.props.data.wordpressPage.yoast.metadesc : null} 
-          title={this.props.data.wordpressPage.yoast.title ? this.props.data.wordpressPage.yoast.title : 'Mortlock Timber'} 
+        <SEO
+          description={
+            this.props.data.wordpressPage.yoast.metadesc
+              ? this.props.data.wordpressPage.yoast.metadesc
+              : null
+          }
+          title={
+            this.props.data.wordpressPage.yoast.title
+              ? this.props.data.wordpressPage.yoast.title
+              : "Mortlock Timber"
+          }
         />
         <div className="inner__banner large">
           <div className="bg__image has-overlay">
-            { bannerContent.banner_image ? <BackgroundImage fluid={bannerContent.banner_image.localFile.childImageSharp.fluid} /> : null }
+            {bannerContent.banner_image ? (
+              <Img
+                fluid={
+                  bannerContent.banner_image.localFile.childImageSharp.fluid
+                }
+              />
+            ) : null}
           </div>
           <div className="container">
             <div className="inner__bannerbox">
-              <div className="box" data-sal="slide-up" data-sal-easing="ease" data-sal-delay="5">
-                <h1 className={ !bannerContent.banner_description ? "text-center" : null } dangerouslySetInnerHTML={{ __html: bannerContent.banner_heading }} />
-                { bannerContent.banner_description ? <span className="inner__bannertext" dangerouslySetInnerHTML={{ __html: bannerContent.banner_description }} /> : null }
+              <div
+                className="box"
+                data-sal="slide-up"
+                data-sal-easing="ease"
+                data-sal-delay="5"
+              >
+                <h1
+                  className={
+                    !bannerContent.banner_description ? "text-center" : null
+                  }
+                  dangerouslySetInnerHTML={{
+                    __html: bannerContent.banner_heading,
+                  }}
+                />
+                {bannerContent.banner_description ? (
+                  <span
+                    className="inner__bannertext"
+                    dangerouslySetInnerHTML={{
+                      __html: bannerContent.banner_description,
+                    }}
+                  />
+                ) : null}
                 <div className="inner__bannerbuttons">
-                  <button className="button primary" data-id='#request-a-quote-block' onClick={() => scrollTo('#request-a-quote-block')}>Request a quote</button>
-                  <a className="button whiteoutline" href="tel:1800894400">Call us now</a>
+                  <button
+                    className="button primary"
+                    data-id="#request-a-quote-block"
+                    onClick={() => scrollTo("#request-a-quote-block")}
+                  >
+                    Request a quote
+                  </button>
+                  <a className="button whiteoutline" href="tel:1800894400">
+                    Call us now
+                  </a>
                 </div>
               </div>
             </div>
           </div>
         </div>
         <div className="generaltext walls add">
-          <div className="aside__text" dangerouslySetInnerHTML={{ __html: this.props.data.wordpressPage.acf.introduction_aside_heading }} />
+          <div
+            className="aside__text"
+            dangerouslySetInnerHTML={{
+              __html: this.props.data.wordpressPage.acf
+                .introduction_aside_heading,
+            }}
+          />
           <div className="container">
             <div className="row middle-md reverse">
               <div className="col-md-6">
-                <div className="textBox" data-sal="slide-up" data-sal-easing="ease" data-sal-delay="5">
-                  <div dangerouslySetInnerHTML={{ __html: this.props.data.wordpressPage.acf.introduction_description }} />
+                <div
+                  className="textBox"
+                  data-sal="slide-up"
+                  data-sal-easing="ease"
+                  data-sal-delay="5"
+                >
+                  <div
+                    dangerouslySetInnerHTML={{
+                      __html: this.props.data.wordpressPage.acf
+                        .introduction_description,
+                    }}
+                  />
                   <div className="btnWrap">
-                    <button data-id='#request-a-quote-block' onClick={() => scrollTo('#request-a-quote-block')}  className="button-learn">{ this.props.data.wordpressPage.acf.introduction_button_text } <span className="btnArrow"><svg className="icon" width="100pt" height="100pt" version="1.1" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg"><path d="m32.812 0l-15.625 15.625 34.375 34.375-34.375 34.375 15.625 15.625 50-50z"/></svg></span></button>
+                    <button
+                      data-id="#request-a-quote-block"
+                      onClick={() => scrollTo("#request-a-quote-block")}
+                      className="button-learn"
+                    >
+                      {
+                        this.props.data.wordpressPage.acf
+                          .introduction_button_text
+                      }{" "}
+                      <span className="btnArrow">
+                        <svg
+                          className="icon"
+                          width="100pt"
+                          height="100pt"
+                          version="1.1"
+                          viewBox="0 0 100 100"
+                          xmlns="http://www.w3.org/2000/svg"
+                        >
+                          <path d="m32.812 0l-15.625 15.625 34.375 34.375-34.375 34.375 15.625 15.625 50-50z" />
+                        </svg>
+                      </span>
+                    </button>
                   </div>
                 </div>
               </div>
               <div className="col-md-6">
                 <div className="image__wrap">
-                  <Img fluid={this.props.data.wordpressPage.acf.introduction_image.localFile.childImageSharp.fluid} alt="Mortlock Timber" />
+                  <Img
+                    fluid={
+                      this.props.data.wordpressPage.acf.introduction_image
+                        .localFile.childImageSharp.fluid
+                    }
+                    alt="Mortlock Timber"
+                  />
                 </div>
               </div>
             </div>
@@ -73,12 +162,25 @@ class Page extends Component {
         <div className="use__block">
           <div className="container">
             <div className="row">
-              { product_features.map((product, index) => (
+              {product_features.map((product, index) => (
                 <div className="col-sm-6 col-md-3" key={index}>
                   <div className="icon__box">
-                    <div className="ico_wrap" dangerouslySetInnerHTML={{ __html: product.product_icon_svg_code }} />
-                    <h3 dangerouslySetInnerHTML={{ __html:product.feature_title }} />
-                    <div dangerouslySetInnerHTML={{ __html:product.feature_description }} />
+                    <div
+                      className="ico_wrap"
+                      dangerouslySetInnerHTML={{
+                        __html: product.product_icon_svg_code,
+                      }}
+                    />
+                    <h3
+                      dangerouslySetInnerHTML={{
+                        __html: product.feature_title,
+                      }}
+                    />
+                    <div
+                      dangerouslySetInnerHTML={{
+                        __html: product.feature_description,
+                      }}
+                    />
                   </div>
                 </div>
               ))}
@@ -90,19 +192,78 @@ class Page extends Component {
           <div className="container">
             <div className="row">
               <div className="col-md-6">
-                <h2 dangerouslySetInnerHTML={{ __html: this.props.data.wordpressPage.acf.product_description_heading }} />
-                <div dangerouslySetInnerHTML={{ __html: this.props.data.wordpressPage.acf.product_text_description }} />
+                <h2
+                  dangerouslySetInnerHTML={{
+                    __html: this.props.data.wordpressPage.acf
+                      .product_description_heading,
+                  }}
+                />
+                <div
+                  dangerouslySetInnerHTML={{
+                    __html: this.props.data.wordpressPage.acf
+                      .product_text_description,
+                  }}
+                />
                 <div className="button_wrap">
-                  {this.props.data.wordpressPage.acf.product_description_buttons.map((button,index) => (
-                    (button.description_button_link) ?
-                    <a rel="noreferrer" target="_blank" href={button.description_button_link.link} className="button-learn" key={index}>{ button.description_button_text } <span className="btnArrow"><svg className="icon" width="100pt" height="100pt" version="1.1" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg"><path d="m32.812 0l-15.625 15.625 34.375 34.375-34.375 34.375 15.625 15.625 50-50z"/></svg></span></a> :
-                    <button key={index} data-id='#request-a-quote-block' onClick={() => scrollTo('#request-a-quote-block')}  className="button-learn">{ button.description_button_text } <span className="btnArrow"><svg className="icon" width="100pt" height="100pt" version="1.1" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg"><path d="m32.812 0l-15.625 15.625 34.375 34.375-34.375 34.375 15.625 15.625 50-50z"/></svg></span></button>
-                  ))}
+                  {this.props.data.wordpressPage.acf.product_description_buttons.map(
+                    (button, index) =>
+                      button.description_button_link ? (
+                        <a
+                          rel="noreferrer"
+                          target="_blank"
+                          href={button.description_button_link.link}
+                          className="button-learn"
+                          key={index}
+                        >
+                          {button.description_button_text}{" "}
+                          <span className="btnArrow">
+                            <svg
+                              className="icon"
+                              width="100pt"
+                              height="100pt"
+                              version="1.1"
+                              viewBox="0 0 100 100"
+                              xmlns="http://www.w3.org/2000/svg"
+                            >
+                              <path d="m32.812 0l-15.625 15.625 34.375 34.375-34.375 34.375 15.625 15.625 50-50z" />
+                            </svg>
+                          </span>
+                        </a>
+                      ) : (
+                        <button
+                          key={index}
+                          data-id="#request-a-quote-block"
+                          onClick={() => scrollTo("#request-a-quote-block")}
+                          className="button-learn"
+                        >
+                          {button.description_button_text}{" "}
+                          <span className="btnArrow">
+                            <svg
+                              className="icon"
+                              width="100pt"
+                              height="100pt"
+                              version="1.1"
+                              viewBox="0 0 100 100"
+                              xmlns="http://www.w3.org/2000/svg"
+                            >
+                              <path d="m32.812 0l-15.625 15.625 34.375 34.375-34.375 34.375 15.625 15.625 50-50z" />
+                            </svg>
+                          </span>
+                        </button>
+                      )
+                  )}
                 </div>
               </div>
               <div className="col-md-6 col-lg-offset-1 col-lg-5">
                 <div className="sustainability_image">
-                  <Img fluid={this.props.data.wordpressPage.acf.product_description_image.localFile.childImageSharp.fluid} alt="Mortlock Timber" />
+                  <Img
+                    fluid={
+                      this.props.data.wordpressPage.acf
+                        .product_description_image.localFile.childImageSharp
+                        .fluid
+                    }
+                    alt="Mortlock Timber"
+                  />
                 </div>
               </div>
             </div>
@@ -113,22 +274,88 @@ class Page extends Component {
             <div className="row">
               <div className="col-md-4">
                 <div className="why_image">
-                  <Img fluid={this.props.data.wordpressPage.acf.what_client_say_image.localFile.childImageSharp.fluid} alt="Mortlock Timber" />
+                  <Img
+                    fluid={
+                      this.props.data.wordpressPage.acf.what_client_say_image
+                        .localFile.childImageSharp.fluid
+                    }
+                    alt="Mortlock Timber"
+                  />
                 </div>
               </div>
               <div className="col-md-8">
                 <div className="general__heading">
-                  <h2 dangerouslySetInnerHTML={{ __html: this.props.data.wordpressPage.acf.why_this_product_main_heading  }} />
+                  <h2
+                    dangerouslySetInnerHTML={{
+                      __html: this.props.data.wordpressPage.acf
+                        .why_this_product_main_heading,
+                    }}
+                  />
                 </div>
                 <div className="row">
                   <div className="col-md-6">
-                  <div dangerouslySetInnerHTML={{ __html: this.props.data.wordpressPage.acf.description_column_one  }} />
+                    <div
+                      dangerouslySetInnerHTML={{
+                        __html: this.props.data.wordpressPage.acf
+                          .description_column_one,
+                      }}
+                    />
                   </div>
                   <div className="col-md-6">
-                    <div dangerouslySetInnerHTML={{ __html: this.props.data.wordpressPage.acf.description_column_two  }} />
+                    <div
+                      dangerouslySetInnerHTML={{
+                        __html: this.props.data.wordpressPage.acf
+                          .description_column_two,
+                      }}
+                    />
                     <div className="btn-holdd">
-                      <Link to={ this.props.data.wordpressPage.acf.why_product_button_link } className="button-learn">{ this.props.data.wordpressPage.acf.why_product_button_text } <span className="btnArrow"><svg className="icon" width="100pt" height="100pt" version="1.1" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg"><path d="m32.812 0l-15.625 15.625 34.375 34.375-34.375 34.375 15.625 15.625 50-50z"/></svg></span></Link>
-                      <span className="info"><button data-id="#testimonial" onClick={() => scrollTo("#testimonial")}><span className="underline">{this.props.data.wordpressPage.acf.what_client_say_text}</span> <svg className="icon" width="100pt" height="100pt" version="1.1" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg"><path d="m32.812 0l-15.625 15.625 34.375 34.375-34.375 34.375 15.625 15.625 50-50z"/></svg></button></span>
+                      <Link
+                        to={
+                          this.props.data.wordpressPage.acf
+                            .why_product_button_link
+                        }
+                        className="button-learn"
+                      >
+                        {
+                          this.props.data.wordpressPage.acf
+                            .why_product_button_text
+                        }{" "}
+                        <span className="btnArrow">
+                          <svg
+                            className="icon"
+                            width="100pt"
+                            height="100pt"
+                            version="1.1"
+                            viewBox="0 0 100 100"
+                            xmlns="http://www.w3.org/2000/svg"
+                          >
+                            <path d="m32.812 0l-15.625 15.625 34.375 34.375-34.375 34.375 15.625 15.625 50-50z" />
+                          </svg>
+                        </span>
+                      </Link>
+                      <span className="info">
+                        <button
+                          data-id="#testimonial"
+                          onClick={() => scrollTo("#testimonial")}
+                        >
+                          <span className="underline">
+                            {
+                              this.props.data.wordpressPage.acf
+                                .what_client_say_text
+                            }
+                          </span>{" "}
+                          <svg
+                            className="icon"
+                            width="100pt"
+                            height="100pt"
+                            version="1.1"
+                            viewBox="0 0 100 100"
+                            xmlns="http://www.w3.org/2000/svg"
+                          >
+                            <path d="m32.812 0l-15.625 15.625 34.375 34.375-34.375 34.375 15.625 15.625 50-50z" />
+                          </svg>
+                        </button>
+                      </span>
                     </div>
                   </div>
                 </div>
@@ -138,49 +365,154 @@ class Page extends Component {
         </div>
         <div className="article__where">
           <div className="container">
-            <h2 dangerouslySetInnerHTML={{ __html: this.props.data.wordpressPage.acf.sections_main_heading  }} />
+            <h2
+              dangerouslySetInnerHTML={{
+                __html: this.props.data.wordpressPage.acf.sections_main_heading,
+              }}
+            />
             <div className="row">
-              {this.props.data.wordpressPage.acf.where_can_it_be_used.map((product, index) => (
-                <div className="col-sm-6 col-md-4" key={index}>
-                  <div className="articletext__box">
-                    <div className="img__wrap">
-                      <Img fluid={product.using_image.localFile.childImageSharp.fluid} alt="Mortlock Timber" />
+              {this.props.data.wordpressPage.acf.where_can_it_be_used.map(
+                (product, index) => (
+                  <div className="col-sm-6 col-md-4" key={index}>
+                    <div className="articletext__box">
+                      <div className="img__wrap">
+                        <Img
+                          fluid={
+                            product.using_image.localFile.childImageSharp.fluid
+                          }
+                          alt="Mortlock Timber"
+                        />
+                      </div>
+                      <h3
+                        dangerouslySetInnerHTML={{
+                          __html: product.using_product_title,
+                        }}
+                      />
+                      {this.props.data.wordpressPage.acf
+                        .show_description_underneath && (
+                        <div
+                          dangerouslySetInnerHTML={{
+                            __html: product.using_product_description,
+                          }}
+                        />
+                      )}
                     </div>
-                    <h3 dangerouslySetInnerHTML={{ __html:product.using_product_title }} />
-                    { this.props.data.wordpressPage.acf.show_description_underneath && <div dangerouslySetInnerHTML={{ __html:product.using_product_description }} /> }
                   </div>
-                </div>
-              ))}
+                )
+              )}
             </div>
             <div className="button_center">
-              <button data-id='#request-a-quote-block' onClick={() => scrollTo('#request-a-quote-block')}  className="button-learn white">{ this.props.data.wordpressPage.acf.where_to_use_button_text } <span className="btnArrow"><svg className="icon" width="100pt" height="100pt" version="1.1" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg"><path d="m32.812 0l-15.625 15.625 34.375 34.375-34.375 34.375 15.625 15.625 50-50z"/></svg></span></button>
+              <button
+                data-id="#request-a-quote-block"
+                onClick={() => scrollTo("#request-a-quote-block")}
+                className="button-learn white"
+              >
+                {this.props.data.wordpressPage.acf.where_to_use_button_text}{" "}
+                <span className="btnArrow">
+                  <svg
+                    className="icon"
+                    width="100pt"
+                    height="100pt"
+                    version="1.1"
+                    viewBox="0 0 100 100"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path d="m32.812 0l-15.625 15.625 34.375 34.375-34.375 34.375 15.625 15.625 50-50z" />
+                  </svg>
+                </span>
+              </button>
               <div>
-                <button className="normal_link" data-id="#testimonial" onClick={() => scrollTo("#testimonial")}><span className="underline">{this.props.data.wordpressPage.acf.what_client_say_text}</span> <svg className="icon" width="100pt" height="100pt" version="1.1" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg"><path d="m32.812 0l-15.625 15.625 34.375 34.375-34.375 34.375 15.625 15.625 50-50z"/></svg></button>
+                <button
+                  className="normal_link"
+                  data-id="#testimonial"
+                  onClick={() => scrollTo("#testimonial")}
+                >
+                  <span className="underline">
+                    {this.props.data.wordpressPage.acf.what_client_say_text}
+                  </span>{" "}
+                  <svg
+                    className="icon"
+                    width="100pt"
+                    height="100pt"
+                    version="1.1"
+                    viewBox="0 0 100 100"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path d="m32.812 0l-15.625 15.625 34.375 34.375-34.375 34.375 15.625 15.625 50-50z" />
+                  </svg>
+                </button>
               </div>
             </div>
           </div>
         </div>
         <div className="decking_options">
-          <div className="aside__text" dangerouslySetInnerHTML={{ __html: this.props.data.wordpressPage.acf.decking_options_aside_title }} />
+          <div
+            className="aside__text"
+            dangerouslySetInnerHTML={{
+              __html: this.props.data.wordpressPage.acf
+                .decking_options_aside_title,
+            }}
+          />
           <div className="container">
             <div className="main_heading">
-              <h2 dangerouslySetInnerHTML={{ __html: this.props.data.wordpressPage.acf.decking_option_main_heading  }} />
-              <div dangerouslySetInnerHTML={{ __html: this.props.data.wordpressPage.acf.decking_option_description }} />
+              <h2
+                dangerouslySetInnerHTML={{
+                  __html: this.props.data.wordpressPage.acf
+                    .decking_option_main_heading,
+                }}
+              />
+              <div
+                dangerouslySetInnerHTML={{
+                  __html: this.props.data.wordpressPage.acf
+                    .decking_option_description,
+                }}
+              />
             </div>
             <div className="row">
-              {this.props.data.wordpressPage.acf.decking_options_text_description.map((post, index) => (
-                <div className="col-sm-6" key={index}>
-                  <div className="option__box">
-                    <div className="option_image">
-                      <Img fluid={post.decking_options_image.localFile.childImageSharp.fluid} alt="Mortlock Timber" />
-                    </div>
-                    <div dangerouslySetInnerHTML={{ __html: post.description_option_description }} />
-                    <div className="button_center">
-                      <a target="_blank" rel="noreferrer" href={ post.decking_option_button_link.link } className="button-learn">{ post.decking_option_button_text } <span className="btnArrow"><svg className="icon" width="100pt" height="100pt" version="1.1" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg"><path d="m32.812 0l-15.625 15.625 34.375 34.375-34.375 34.375 15.625 15.625 50-50z"/></svg></span></a>
+              {this.props.data.wordpressPage.acf.decking_options_text_description.map(
+                (post, index) => (
+                  <div className="col-sm-6" key={index}>
+                    <div className="option__box">
+                      <div className="option_image">
+                        <Img
+                          fluid={
+                            post.decking_options_image.localFile.childImageSharp
+                              .fluid
+                          }
+                          alt="Mortlock Timber"
+                        />
+                      </div>
+                      <div
+                        dangerouslySetInnerHTML={{
+                          __html: post.description_option_description,
+                        }}
+                      />
+                      <div className="button_center">
+                        <a
+                          target="_blank"
+                          rel="noreferrer"
+                          href={post.decking_option_button_link.link}
+                          className="button-learn"
+                        >
+                          {post.decking_option_button_text}{" "}
+                          <span className="btnArrow">
+                            <svg
+                              className="icon"
+                              width="100pt"
+                              height="100pt"
+                              version="1.1"
+                              viewBox="0 0 100 100"
+                              xmlns="http://www.w3.org/2000/svg"
+                            >
+                              <path d="m32.812 0l-15.625 15.625 34.375 34.375-34.375 34.375 15.625 15.625 50-50z" />
+                            </svg>
+                          </span>
+                        </a>
+                      </div>
                     </div>
                   </div>
-                </div>
-              ))}
+                )
+              )}
             </div>
           </div>
         </div>
@@ -190,15 +522,31 @@ class Page extends Component {
               <div className="col-md-6">
                 <div className="pricingff__image">
                   <div className="bg_image">
-                    <BackgroundImage  fluid={this.props.data.wordpressPage.acf.product_pricing_image.localFile.childImageSharp.fluid} alt="Mortlock Timber" />
+                    <Img
+                      fluid={
+                        this.props.data.wordpressPage.acf.product_pricing_image
+                          .localFile.childImageSharp.fluid
+                      }
+                      alt="Mortlock Timber"
+                    />
                   </div>
                 </div>
               </div>
               <div className="col-md-6">
                 <div className="pricing__formwrap">
                   <div className="main_heading">
-                    <h2 dangerouslySetInnerHTML={{ __html: this.props.data.wordpressPage.acf.product_pricing_heading  }} />
-                    <div dangerouslySetInnerHTML={{ __html: this.props.data.wordpressPage.acf.product_pricing_description }} />
+                    <h2
+                      dangerouslySetInnerHTML={{
+                        __html: this.props.data.wordpressPage.acf
+                          .product_pricing_heading,
+                      }}
+                    />
+                    <div
+                      dangerouslySetInnerHTML={{
+                        __html: this.props.data.wordpressPage.acf
+                          .product_pricing_description,
+                      }}
+                    />
                   </div>
                   <div className="form__wrapper">
                     <LandingPageForm location={this.props.location.href} />
@@ -208,7 +556,10 @@ class Page extends Component {
             </div>
           </div>
         </div>
-        <GlobalTestimonialSlider contentData={latestTestomonial} button="mortlock timber testimonials"  />
+        <GlobalTestimonialSlider
+          contentData={latestTestomonial}
+          button="mortlock timber testimonials"
+        />
       </LayoutLanding>
     )
   }

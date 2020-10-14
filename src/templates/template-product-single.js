@@ -294,7 +294,8 @@ class Page extends Component {
               <div className="general-heading">
                 <h2>Useful Info</h2>
               </div>
-              <div className="info__slider row center-sm">
+              
+              <div className={`info__slider row center-xs text-center ${userLinks.length > 3 ? 'start-sm' : ''}`}>
                 {userLinks
                   ? userLinks.map((link, index) => (
                       <div

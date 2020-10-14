@@ -17,6 +17,7 @@ class SampleRequest extends Component {
         phone: "",
         company: "",
         address: "",
+        suburb: "",
         state: "",
         postcode: "",
         projectsize: "",
@@ -33,6 +34,7 @@ class SampleRequest extends Component {
         phone: "",
         company: "",
         address: "",
+        suburb: "",
         state: "",
         postcode: "",
         projectsize: "",
@@ -129,6 +131,7 @@ class SampleRequest extends Component {
         bodyFormData.append("company", this.state.fields.company)
       }
       bodyFormData.append("address", this.state.fields.address)
+      bodyFormData.append("suburb", this.state.fields.suburb)
       bodyFormData.append("state", this.state.fields.state)
       bodyFormData.append("email", this.state.fields.email)
       bodyFormData.append("phone", this.state.fields.phone)
@@ -156,6 +159,7 @@ class SampleRequest extends Component {
                   phone: "",
                   company: "",
                   state: "",
+                  suburb: "",
                   postcode: "",
                   projectsize: "",
                   sample: "",
@@ -335,6 +339,26 @@ class SampleRequest extends Component {
             </div>
           </div>
           <div className="row">
+          <div className="col-sm-6">
+              <div className="form_group">
+                <label htmlFor="suburb">Suburb *</label>
+                <div className="form_input">
+                  <input
+                    className="noEmpty"
+                    aria-label="suburb name"
+                    type="text"
+                    name="suburb"
+                    id="suburb"
+                    placeholder="Enter suburb"
+                    value={this.state.fields.suburb || ""}
+                    onChange={this.handleInputChange}
+                  />
+                  {this.state.errors.suburb !== "" && (
+                    <span className="error">{this.state.errors.suburb}</span>
+                  )}
+                </div>
+              </div>
+            </div>
             <div className="col-sm-6">
               <div className="form_group">
                 <label htmlFor="state">State *</label>

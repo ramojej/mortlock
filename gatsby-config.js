@@ -30,7 +30,7 @@ module.exports = {
     },
     `gatsby-plugin-sitemap`,
     `gatsby-plugin-smoothscroll`,
-    `gatsby-plugin-scroll-reveal`,
+    //`gatsby-plugin-scroll-reveal`,
     `gatsby-background-image`,
     `gatsby-plugin-react-helmet`,
     `gatsby-plugin-sass`,

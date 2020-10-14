@@ -7,6 +7,7 @@
   "dependencies": {
     "@react-google-maps/api": "^1.9.12",
     "@wardpeet/gatsby-image-nextgen": "0.0.1",
+    "autoprefixer": "^9.8.6",
     "axios": "^0.20.0",
     "dotenv": "^8.2.0",
     "gatsby": "^2.23.3",

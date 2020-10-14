@@ -1,4 +1,4 @@
-import React, { Component } from "react"
+import React, { useRef } from "react"
 import { graphql } from "gatsby"
 
 import SEO from "../components/seo"
@@ -10,182 +10,160 @@ import GlobalNewsSlider from "../components/global-news-slider"
 import GlobalTestimonialSlider from "../components/global-testimonial-slider"
 import GlobalSuccessStory from "../components/global-success-slider"
 import GlobalProjectSlider from "../components/global-projects-slider"
+import { useHasBeenVisible } from "../hooks/useVisibility"
 
-import "../assets/scss/global.scss"
+const IndexPage = props => {
+  const { data } = props
 
-class IndexPage extends Component {
-  render() {
-    const bannerContent = this.props.data.allWordpressPage.edges[0].node.acf
-      .banner_home_slider
+  const halfPage = useRef()
+  const preload = useRef()
+  const hasScrolled = useHasBeenVisible(halfPage)
+  const isScrolling = useHasBeenVisible(preload)
 
-    const aboutContent = {
-      alignImage: this.props.data.allWordpressPage.edges[0].node.acf
-        .align_about_image,
-      description: this.props.data.allWordpressPage.edges[0].node.acf
-        .about_description,
-      image: this.props.data.allWordpressPage.edges[0].node.acf.about_image,
-      buttonText: this.props.data.allWordpressPage.edges[0].node.acf
-        .about_button_text,
-      buttonLink: this.props.data.allWordpressPage.edges[0].node.acf
-        .about_button_link,
-      showButton: this.props.data.allWordpressPage.edges[0].node.acf
+  const bannerContent =
+    data.allWordpressPage.edges[0].node.acf.banner_home_slider
+
+  const aboutContent = {
+    alignImage: data.allWordpressPage.edges[0].node.acf.align_about_image,
+    description: data.allWordpressPage.edges[0].node.acf.about_description,
+    image: data.allWordpressPage.edges[0].node.acf.about_image,
+    buttonText: data.allWordpressPage.edges[0].node.acf.about_button_text,
+    buttonLink: data.allWordpressPage.edges[0].node.acf.about_button_link,
+    showButton:
+      data.allWordpressPage.edges[0].node.acf
         .show_button_under_about_description,
-    }
-    const imageBlock = {
-      alignImage: this.props.data.allWordpressPage.edges[0].node.acf
-        .align_main_image,
-      description: this.props.data.allWordpressPage.edges[0].node.acf
-        .general_description,
-      image: this.props.data.allWordpressPage.edges[0].node.acf.main_image,
-    }
-
-    const pricingBlock = {
-      alignImage: this.props.data.allWordpressPage.edges[0].node.acf
-        .align_pricing_image,
-      description: this.props.data.allWordpressPage.edges[0].node.acf
-        .pricing_description,
-      image: this.props.data.allWordpressPage.edges[0].node.acf.pricing_image,
-      buttonText: this.props.data.allWordpressPage.edges[0].node.acf
-        .pricing_button_text,
-      buttonLink: this.props.data.allWordpressPage.edges[0].node.acf
-        .pricing_button_link,
-      showButton: this.props.data.allWordpressPage.edges[0].node.acf
-        .show_button_under_pricing_description,
-    }
-
-    const timberDecking = {
-      alignImage: this.props.data.allWordpressPage.edges[0].node.acf
-        .align_decking_image,
-      description: this.props.data.allWordpressPage.edges[0].node.acf
-        .decking_description,
-      image: this.props.data.allWordpressPage.edges[0].node.acf.decking_image,
-      buttonText: this.props.data.allWordpressPage.edges[0].node.acf
-        .decking_button_text,
-      buttonLink: this.props.data.allWordpressPage.edges[0].node.acf
-        .decking_button_link,
-      showButton: this.props.data.allWordpressPage.edges[0].node.acf
-        .show_button_under_decking_description,
-    }
-
-    const timberWalls = {
-      alignImage: this.props.data.allWordpressPage.edges[0].node.acf
-        .align_walls_image,
-      description: this.props.data.allWordpressPage.edges[0].node.acf
-        .walls_description,
-      image: this.props.data.allWordpressPage.edges[0].node.acf.walls_image,
-      buttonText: this.props.data.allWordpressPage.edges[0].node.acf
-        .wall_button_text,
-      buttonLink: this.props.data.allWordpressPage.edges[0].node.acf
-        .wall_button_link,
-      showButton: this.props.data.allWordpressPage.edges[0].node.acf
-        .show_button_under_wall_description,
-    }
-
-    const timberCeilings = {
-      alignImage: this.props.data.allWordpressPage.edges[0].node.acf
-        .align_image,
-      description: this.props.data.allWordpressPage.edges[0].node.acf
-        .ceilings_description,
-      image: this.props.data.allWordpressPage.edges[0].node.acf.ceilings_image,
-      buttonText: this.props.data.allWordpressPage.edges[0].node.acf
-        .button_text,
-      buttonLink: this.props.data.allWordpressPage.edges[0].node.acf
-        .button_link,
-      showButton: this.props.data.allWordpressPage.edges[0].node.acf
-        .show_button_under_description,
-    }
-
-    const generalContent = {
-      successStory: this.props.data.allWordpressPage.edges[0].node.acf
-        .show_success_stories,
-      latestProject: this.props.data.allWordpressPage.edges[0].node.acf
-        .show_latest_projects,
-      latestArticle: this.props.data.allWordpressPage.edges[0].node.acf
-        .show_latest_articles,
-      testimonials: this.props.data.allWordpressPage.edges[0].node.acf
-        .show_testimonials,
-    }
-
-    const latestArticles = this.props.data.allWordpressPost.edges
-    const latestProjects = this.props.data.allWordpressWpProject.edges
-
-    const latestSuccessStories = {
-      successTitle: this.props.data.allWordpressAcfOptions.edges[0].node.options
-        .success_stories_heading,
-      successStories: this.props.data.allWordpressAcfOptions.edges[0].node
-        .options.success_stories,
-    }
-    const latestTestomonial = {
-      testimonialHeading: this.props.data.allWordpressAcfOptions.edges[0].node
-        .options.client_testimonials_heading,
-      allTestimonials: this.props.data.allWordpressAcfOptions.edges[0].node
-        .options.client_testimonials,
-    }
-
-    return (
-      <Layout>
-        <SEO
-          description={
-            this.props.data.allWordpressPage.edges[0].node.yoast.metadesc
-          }
-          title={this.props.data.allWordpressPage.edges[0].node.yoast.title}
-        />
-        <Banner data={bannerContent} type="homepage" />
-        <GeneralText
-          contentData={aboutContent}
-          animation="false"
-          col1="col-sm-6 col-xlg-7"
-          col2="col-sm-6 col-xlg-5"
-        />
-        <GeneralText
-          contentData={imageBlock}
-          col1="col-sm-6 col-xlg-5"
-          col2="col-sm-6 col-xlg-7"
-          addClass="range"
-        />
-        <GeneralText
-          contentData={pricingBlock}
-          col1="col-sm-6 col-xlg-7"
-          col2="col-sm-6 col-xlg-5"
-          addClass="pricing"
-        />
-        <GeneralText
-          contentData={timberDecking}
-          col1="col-sm-7 col-xlg-8"
-          col2="col-sm-5 col-xlg-4"
-          addClass="decking"
-        />
-        <GeneralText
-          contentData={timberWalls}
-          col1="col-sm-6 col-xlg-5"
-          col2="col-sm-6 col-xlg-7"
-          addClass="walls"
-        />
-        <GeneralText
-          contentData={timberCeilings}
-          col1="col-sm-6 col-xlg-6"
-          col2="col-sm-6 col-xlg-6"
-          addClass="ceilings"
-        />
-        {(() => {
-          if (generalContent.latestProject)
-            return <GlobalProjectSlider contentData={latestProjects} />
-        })()}
-        {(() => {
-          if (generalContent.testimonials)
-            return <GlobalTestimonialSlider contentData={latestTestomonial} />
-        })()}
-        {(() => {
-          if (generalContent.successStory)
-            return <GlobalSuccessStory contentData={latestSuccessStories} />
-        })()}
-        {(() => {
-          if (generalContent.latestArticle)
-            return <GlobalNewsSlider contentData={latestArticles} />
-        })()}
-      </Layout>
-    )
   }
+  const imageBlock = {
+    alignImage: data.allWordpressPage.edges[0].node.acf.align_main_image,
+    description: data.allWordpressPage.edges[0].node.acf.general_description,
+    image: data.allWordpressPage.edges[0].node.acf.main_image,
+  }
+
+  const pricingBlock = {
+    alignImage: data.allWordpressPage.edges[0].node.acf.align_pricing_image,
+    description: data.allWordpressPage.edges[0].node.acf.pricing_description,
+    image: data.allWordpressPage.edges[0].node.acf.pricing_image,
+    buttonText: data.allWordpressPage.edges[0].node.acf.pricing_button_text,
+    buttonLink: data.allWordpressPage.edges[0].node.acf.pricing_button_link,
+    showButton:
+      data.allWordpressPage.edges[0].node.acf
+        .show_button_under_pricing_description,
+  }
+
+  const timberDecking = {
+    alignImage: data.allWordpressPage.edges[0].node.acf.align_decking_image,
+    description: data.allWordpressPage.edges[0].node.acf.decking_description,
+    image: data.allWordpressPage.edges[0].node.acf.decking_image,
+    buttonText: data.allWordpressPage.edges[0].node.acf.decking_button_text,
+    buttonLink: data.allWordpressPage.edges[0].node.acf.decking_button_link,
+    showButton:
+      data.allWordpressPage.edges[0].node.acf
+        .show_button_under_decking_description,
+  }
+
+  const timberWalls = {
+    alignImage: data.allWordpressPage.edges[0].node.acf.align_walls_image,
+    description: data.allWordpressPage.edges[0].node.acf.walls_description,
+    image: data.allWordpressPage.edges[0].node.acf.walls_image,
+    buttonText: data.allWordpressPage.edges[0].node.acf.wall_button_text,
+    buttonLink: data.allWordpressPage.edges[0].node.acf.wall_button_link,
+    showButton:
+      data.allWordpressPage.edges[0].node.acf
+        .show_button_under_wall_description,
+  }
+
+  const timberCeilings = {
+    alignImage: data.allWordpressPage.edges[0].node.acf.align_image,
+    description: data.allWordpressPage.edges[0].node.acf.ceilings_description,
+    image: data.allWordpressPage.edges[0].node.acf.ceilings_image,
+    buttonText: data.allWordpressPage.edges[0].node.acf.button_text,
+    buttonLink: data.allWordpressPage.edges[0].node.acf.button_link,
+    showButton:
+      data.allWordpressPage.edges[0].node.acf.show_button_under_description,
+  }
+
+  const generalContent = {
+    successStory: data.allWordpressPage.edges[0].node.acf.show_success_stories,
+    latestProject: data.allWordpressPage.edges[0].node.acf.show_latest_projects,
+    latestArticle: data.allWordpressPage.edges[0].node.acf.show_latest_articles,
+    testimonials: data.allWordpressPage.edges[0].node.acf.show_testimonials,
+  }
+
+  const latestArticles = data.allWordpressPost.edges
+  const latestProjects = data.allWordpressWpProject.edges
+
+  const latestSuccessStories = {
+    successTitle:
+      data.allWordpressAcfOptions.edges[0].node.options.success_stories_heading,
+    successStories:
+      data.allWordpressAcfOptions.edges[0].node.options.success_stories,
+  }
+  const latestTestomonial = {
+    testimonialHeading:
+      data.allWordpressAcfOptions.edges[0].node.options
+        .client_testimonials_heading,
+    allTestimonials:
+      data.allWordpressAcfOptions.edges[0].node.options.client_testimonials,
+  }
+
+  return (
+    <Layout>
+      <SEO
+        description={data.allWordpressPage.edges[0].node.yoast.metadesc}
+        title={data.allWordpressPage.edges[0].node.yoast.title}
+      />
+      <Banner data={bannerContent} type="homepage" />
+      <GeneralText
+        contentData={aboutContent}
+        animation="false"
+        col1="col-sm-6 col-xlg-7"
+        col2="col-sm-6 col-xlg-5"
+      />
+
+      {hasScrolled || isScrolling ? (
+        <>
+          <GeneralText
+            contentData={imageBlock}
+            col1="col-sm-6 col-xlg-5"
+            col2="col-sm-6 col-xlg-7"
+            addClass="range"
+          />
+          <GeneralText
+            contentData={pricingBlock}
+            col1="col-sm-6 col-xlg-7"
+            col2="col-sm-6 col-xlg-5"
+            addClass="pricing"
+          />
+          <GeneralText
+            contentData={timberDecking}
+            col1="col-sm-7 col-xlg-8"
+            col2="col-sm-5 col-xlg-4"
+            addClass="decking"
+          />
+          <GeneralText
+            contentData={timberWalls}
+            col1="col-sm-6 col-xlg-5"
+            col2="col-sm-6 col-xlg-7"
+            addClass="walls"
+          />
+          <GeneralText
+            contentData={timberCeilings}
+            col1="col-sm-6 col-xlg-6"
+            col2="col-sm-6 col-xlg-6"
+            addClass="ceilings"
+          />
+          <GlobalProjectSlider contentData={latestProjects} />
+          <GlobalTestimonialSlider contentData={latestTestomonial} />
+          <GlobalSuccessStory contentData={latestSuccessStories} />
+          <GlobalNewsSlider contentData={latestArticles} />
+        </>
+      ) : (
+        <div ref={halfPage} style={{ minHeight: "1000px" }}>
+          Test
+        </div>
+      )}
+    </Layout>
+  )
 }
 
 export default IndexPage
