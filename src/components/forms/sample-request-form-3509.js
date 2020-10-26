@@ -1,6 +1,5 @@
 import React, { Component } from "react"
 import axios from "axios"
-import qs from "qs"
 
 import Helpers from "../helpers/helpers"
 import Loader from "../helpers/loader"
@@ -339,7 +338,7 @@ class SampleRequest extends Component {
             </div>
           </div>
           <div className="row">
-          <div className="col-sm-6">
+            <div className="col-sm-6">
               <div className="form_group">
                 <label htmlFor="suburb">Suburb *</label>
                 <div className="form_input">
